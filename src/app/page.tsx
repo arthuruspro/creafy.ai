@@ -205,7 +205,7 @@ function BetterVideoAds() {
           <span className="gradient-text">AI videos</span>
         </h2>
         <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
-          Forget switching between dozens of tools, complex timelines, and slow production. Write your script, pick an actor, and your ad is ready to run.
+          No tools, no timeline, no production headaches. Just 3 steps from idea to ad.
         </p>
 
         {/* 3 Feature Cards */}
