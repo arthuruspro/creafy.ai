@@ -264,12 +264,9 @@ function AIActors() {
         </a>
 
         {/* Actors Showcase */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="rounded-2xl overflow-hidden">
-            <img src="/ooo4.webp" alt="AI Actors showcase 1" className="w-full h-full object-cover" />
-          </div>
-          <div className="rounded-2xl overflow-hidden">
-            <img src="/ooo5.webp" alt="AI Actors showcase 2" className="w-full h-full object-cover" />
+            <img src="/ooo4.webp" alt="AI Actors showcase" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
