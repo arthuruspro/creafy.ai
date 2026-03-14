@@ -231,9 +231,9 @@ function BetterVideoAds() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
-              <div className="p-6">
-                <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-2">{card.title}</h3>
-                <p className="text-[14px] text-[#888] leading-relaxed">{card.desc}</p>
+              <div className="p-6 bg-[#5C7DEE] rounded-b-2xl">
+                <h3 className="text-[18px] font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-[14px] text-white/80 leading-relaxed">{card.desc}</p>
               </div>
             </div>
           ))}
