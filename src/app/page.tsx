@@ -201,8 +201,8 @@ function BetterVideoAds() {
     <section className="py-20 bg-white">
       <div className="container-main text-center">
         <h2 className="text-[32px] md:text-[44px] lg:text-[52px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
-          Create better video ads{" "}
-          <span className="gradient-text">with AI</span>
+          The fastest way to create{" "}
+          <span className="gradient-text">AI videos</span>
         </h2>
         <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
           Forget switching between dozens of tools, complex timelines, and slow production. Creafy gives you everything you need to create, refine, and launch video ads with AI.
