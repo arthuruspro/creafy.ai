@@ -176,7 +176,7 @@ function Hero() {
 
         {/* CTA */}
         <a href="#" className="btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
-          Create Your Ad For $1
+          Create Your First Ad →
         </a>
       </div>
 
