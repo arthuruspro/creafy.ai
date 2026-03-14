@@ -739,7 +739,6 @@ function Footer() {
 export default function Home() {
   return (
     <main>
-      <TopBanner />
       <Navbar />
       <Hero />
       <TrustMetrics />
