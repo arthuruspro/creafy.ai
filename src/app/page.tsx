@@ -214,17 +214,17 @@ function BetterVideoAds() {
             {
               title: "Write your script",
               desc: "Type what you want to say — or let AI write it for you.",
-              img: "/jj1.png",
+              img: "/step1.png",
             },
             {
               title: "Choose from 300+ AI actors",
               desc: "Realistic AI models that match your brand.",
-              img: "/jj2.png",
+              img: "/step2.png",
             },
             {
               title: "Launch your ad",
               desc: "Download your video ad ready to run on any platform.",
-              img: "/jj3.png",
+              img: "/step3.png",
             },
           ].map((card, i) => (
             <div key={i} className="bg-[#f8f8fa] rounded-2xl overflow-hidden text-left hover:shadow-md transition-shadow">
