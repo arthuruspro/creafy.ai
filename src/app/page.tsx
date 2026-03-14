@@ -177,7 +177,7 @@ function Hero() {
         {/* CTA */}
         <a href="#" className="inline-flex items-center gap-2 btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
           <SparkleIcon className="w-4 h-4" />
-          Create Your First Ad
+          Create your first ad
         </a>
       </div>
 
@@ -263,7 +263,7 @@ function AIActors() {
         </p>
         <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
           <SparkleIcon className="w-4 h-4" />
-          Create Your First Ad
+          Create your first ad
         </a>
 
         {/* Actors Showcase */}
@@ -297,7 +297,7 @@ function ProductInHand() {
             </p>
             <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
               <SparkleIcon className="w-4 h-4" />
-              Create Your First Ad
+              Create your first ad
             </a>
           </div>
 
