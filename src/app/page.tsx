@@ -26,9 +26,15 @@ const ChevronDown = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-const SparkleIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M8 0l1.5 5.5L15 8l-5.5 1.5L8 15l-1.5-5.5L1 8l5.5-1.5z" fill="#818cf8" />
+const SparkleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z" fill="currentColor" />
+  </svg>
+);
+
+const PlayIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+    <path d="M8 5v14l11-7z" />
   </svg>
 );
 
@@ -187,88 +193,441 @@ function Hero() {
 }
 
 /* ═══════════════════════════════════════════
-   TRUST METRICS
+   BETTER VIDEO ADS (arcads hero section)
    ═══════════════════════════════════════════ */
 
-function TrustMetrics() {
+function BetterVideoAds() {
   return (
-    <section className="py-14 bg-[#F6F6F8]">
-      <div className="container-main">
-        <p className="text-center text-[13px] text-[#999] font-medium mb-8 tracking-wide uppercase">
-          Trusted by 300+ brands with $100M+ in revenue
+    <section className="py-20 bg-white">
+      <div className="container-main text-center">
+        <h2 className="text-[32px] md:text-[44px] lg:text-[52px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
+          Create better video ads{" "}
+          <span className="gradient-text">with AI</span>
+        </h2>
+        <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
+          Forget switching between dozens of tools, complex timelines, and slow production. Creafy gives you everything you need to create, refine, and launch video ads with AI.
         </p>
 
-        {/* Scrolling logos */}
-        <div className="overflow-hidden mb-12">
-          <div className="flex gap-10 animate-scroll-left">
-            {[...Array(2)].map((_, s) => (
-              <div key={s} className="flex gap-10 items-center shrink-0">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div key={i} className="w-20 h-7 bg-gray-100 rounded shrink-0" />
-                ))}
+        {/* 3 Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {[
+            {
+              title: "Choose your model",
+              desc: "Pick the AI model that fits your creative goal. From cinematic video to realistic product visuals.",
+              icon: (
+                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                </svg>
+              ),
+            },
+            {
+              title: "Shape your ad",
+              desc: "Edit, translate, extend, subtitle, upscale and remix your video using AI tools.",
+              icon: (
+                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              ),
+            },
+            {
+              title: "Start from proven formats",
+              desc: "Use ready-made ad presets built for performance marketers.",
+              icon: (
+                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              ),
+            },
+          ].map((card, i) => (
+            <div key={i} className="bg-[#f8f8fa] rounded-2xl p-6 text-left hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
+                {card.icon}
+              </div>
+              <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-2">{card.title}</h3>
+              <p className="text-[14px] text-[#888] leading-relaxed">{card.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   TRUSTED BY MARKETERS
+   ═══════════════════════════════════════════ */
+
+function TrustedByMarketers() {
+  const brands = ["Headway", "ClickFunnels", "Quiet", "CleanFox", "BendingSpoons", "Asana"];
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="container-main text-center">
+        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-3 tracking-tight">
+          Used by millions of the best marketers
+        </h2>
+        <p className="text-[16px] text-[#888] mb-12">
+          Fast growing D2C brands, $1B mobile app studios, top marketing agencies
+        </p>
+
+        {/* Brand logos */}
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-40">
+          {brands.map((brand, i) => (
+            <div key={i} className="text-[18px] md:text-[20px] font-bold text-[#1a1a1a] tracking-tight">
+              {brand}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   CAMPAIGN RESULTS CAROUSEL
+   ═══════════════════════════════════════════ */
+
+function CampaignResults() {
+  const campaigns = [
+    { brand: "Learna", handle: "@learna", badge: "Sponsored", badgeColor: "bg-blue-100 text-blue-700", copy: "Boring textbooks? Learn smarter with AI-powered flashcards", views: "12.6K", viewsChange: "+45%", revenue: "$18.2K", revenueChange: "+120%" },
+    { brand: "Glam", handle: "@glamofficial", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Get that summer glow with our new skincare collection", views: "28K", viewsChange: "+62%", revenue: "$32.1K", revenueChange: "+270%" },
+    { brand: "MellowFlow", handle: "@mellowflow", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Sleep better tonight. Natural supplements, proven results", views: "15.3K", viewsChange: "+38%", revenue: "$10.7K", revenueChange: "+85%" },
+    { brand: "Learna", handle: "@learna", badge: "Sponsored", badgeColor: "bg-blue-100 text-blue-700", copy: "Master any subject in half the time with adaptive learning", views: "19.4K", viewsChange: "+52%", revenue: "$24.8K", revenueChange: "+156%" },
+    { brand: "Glam", handle: "@glamofficial", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Transform your skincare routine in just 7 days", views: "22.1K", viewsChange: "+71%", revenue: "$28.5K", revenueChange: "+198%" },
+  ];
+
+  return (
+    <section className="py-16 bg-[#f8f8fa]">
+      <div className="overflow-x-auto scrollbar-hide">
+        <div className="flex gap-5 px-5 w-max">
+          {campaigns.map((c, i) => (
+            <div key={i} className="w-[300px] bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 shrink-0">
+              {/* Top bar */}
+              <div className="p-4 pb-3">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-bold text-[13px]">
+                    {c.brand[0]}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[13px] font-semibold text-[#1a1a1a] truncate">{c.brand}</p>
+                    <p className="text-[11px] text-[#999]">{c.handle}</p>
+                  </div>
+                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${c.badgeColor}`}>
+                    {c.badge}
+                  </span>
+                </div>
+                <p className="text-[13px] text-[#555] leading-snug mb-3">{c.copy}</p>
+              </div>
+
+              {/* Image placeholder */}
+              <div className="aspect-[4/3] bg-gradient-to-br from-[#f0f0f4] to-[#e8e8ee] flex items-center justify-center">
+                <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-sm">
+                  <PlayIcon />
+                </div>
+              </div>
+
+              {/* Metrics */}
+              <div className="p-4 grid grid-cols-2 gap-3">
+                <div>
+                  <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Views</p>
+                  <p className="text-[16px] font-bold text-[#1a1a1a]">{c.views}</p>
+                  <p className="text-[11px] font-semibold text-green-500">{c.viewsChange}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Revenue</p>
+                  <p className="text-[16px] font-bold text-[#1a1a1a]">{c.revenue}</p>
+                  <p className="text-[11px] font-semibold text-green-500">{c.revenueChange}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   THOUGHT LEADERS
+   ═══════════════════════════════════════════ */
+
+function ThoughtLeaders() {
+  const leaders = [
+    { name: "Alex Cooper", title: "Founder @ Adcrate", avatar: "AC" },
+    { name: "Greg Isenberg", title: "CEO @ Late Checkout", avatar: "GI" },
+    { name: "Sam Piliero", title: "CEO @ The Moonlighters", avatar: "SP" },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="container-main">
+        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-3 tracking-tight">
+          Recommended by thought leaders
+        </h2>
+        <p className="text-[15px] text-[#888] text-center mb-12">
+          Thought leaders, YouTube influencers, Twitter influencers, TikTok influencers
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {leaders.map((l, i) => (
+            <div key={i} className="bg-[#f8f8fa] rounded-2xl overflow-hidden">
+              {/* Video thumbnail */}
+              <div className="aspect-video bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] flex items-center justify-center relative">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <PlayIcon />
+                </div>
+              </div>
+              {/* Info */}
+              <div className="p-5 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#667eea] to-[#818cf8] flex items-center justify-center text-white font-bold text-[12px] shrink-0">
+                  {l.avatar}
+                </div>
+                <div>
+                  <p className="text-[14px] font-bold text-[#1a1a1a]">{l.name}</p>
+                  <p className="text-[12px] text-[#888]">{l.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   AI ACTORS
+   ═══════════════════════════════════════════ */
+
+function AIActors() {
+  const actors = Array.from({ length: 12 }, (_, i) => i);
+
+  return (
+    <section className="py-20 bg-[#f8f8fa]">
+      <div className="container-main text-center">
+        <h2 className="text-[28px] md:text-[42px] font-extrabold text-[#1a1a1a] mb-3 tracking-tight">
+          The most realistic and captivating{" "}
+          <span className="gradient-text">AI Actors</span>
+        </h2>
+        <p className="text-[16px] text-[#888] mb-8">
+          The best AI UGC library with 1,000+ AI Actors
+        </p>
+        <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
+          <SparkleIcon className="w-4 h-4" />
+          Create Your AI Ad
+        </a>
+
+        {/* Actors Grid */}
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {actors.map((_, i) => (
+            <div key={i} className="aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden relative group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   PRODUCT IN HAND
+   ═══════════════════════════════════════════ */
+
+function ProductInHand() {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container-main">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div>
+            <p className="text-[13px] text-[#667eea] font-semibold mb-3 uppercase tracking-wider">Avatar holding your product</p>
+            <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
+              Create your own AI Actor
+            </h2>
+            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+              Generate a face and make them hold your product, show your app, and wear your clothes.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
+              <SparkleIcon className="w-4 h-4" />
+              Create Your AI Ad
+            </a>
+          </div>
+
+          {/* Images */}
+          <div className="grid grid-cols-3 gap-3">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#f0f0f4] to-[#e0e0e8] rounded-2xl" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   AI VIDEO EDITING
+   ═══════════════════════════════════════════ */
+
+function AIVideoEditing() {
+  return (
+    <section className="py-20 bg-[#f8f8fa]">
+      <div className="container-main">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Images */}
+          <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#e8e8ee] to-[#d8d8e0] rounded-2xl" />
+            ))}
+          </div>
+
+          {/* Text */}
+          <div className="order-1 lg:order-2">
+            <div className="flex items-center gap-3 mb-3">
+              <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] tracking-tight leading-[1.15]">
+                AI Video Editing
+              </h2>
+              <span className="bg-[#667eea] text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                Soon!
+              </span>
+            </div>
+            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+              Add B-Rolls, music, captions and transitions in one click.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
+              <SparkleIcon className="w-4 h-4" />
+              Create Your AI Ad
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   EMOTION CONTROL
+   ═══════════════════════════════════════════ */
+
+function EmotionControl() {
+  const emotions = [
+    { label: "Neutral", emoji: "😐" },
+    { label: "Happy", emoji: "😊" },
+    { label: "Surprised", emoji: "😮" },
+    { label: "Laughing", emoji: "😂" },
+    { label: "Serious", emoji: "😤" },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="container-main">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div>
+            <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
+              Emotion control
+            </h2>
+            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+              You have full emotion control. Just write how you want it.
+            </p>
+            {/* Emotion chips */}
+            <div className="flex flex-wrap gap-2">
+              {emotions.map((e, i) => (
+                <div
+                  key={i}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-[13px] font-medium transition-colors cursor-pointer ${
+                    i === 2
+                      ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
+                      : "bg-white text-[#555] border-gray-200 hover:border-[#999]"
+                  }`}
+                >
+                  <span>{e.emoji}</span>
+                  <span>{e.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Emotion images */}
+          <div className="grid grid-cols-3 gap-3">
+            {["Surprised", "Laughing", "Neutral"].map((emotion, i) => (
+              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#f0f0f4] to-[#e0e0e8] rounded-2xl relative overflow-hidden">
+                <div className="absolute bottom-3 left-3 right-3">
+                  <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
+                    {emotion}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {[
-            { stat: "300k+", label: "Videos generated", desc: "Trusted by creators and brands worldwide." },
-            { stat: "3.1x", label: "Average ROAS", desc: "Proven results that boost every campaign." },
-            { stat: "2m 20s", label: "Average generation time", desc: "From idea to finished video. Instantly." },
-          ].map((item, i) => (
-            <div key={i} className="card-border p-6 text-center">
-              <p className="text-[32px] font-extrabold text-[#1a1a1a] mb-0.5">{item.stat}</p>
-              <p className="text-[15px] font-semibold text-[#1a1a1a] mb-1.5">{item.label}</p>
-              <p className="text-[13px] text-[#999]">{item.desc}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
 
 /* ═══════════════════════════════════════════
-   HOW IT WORKS
+   LOCALIZE IN EVERY LANGUAGE
    ═══════════════════════════════════════════ */
 
-function HowItWorks() {
-  const steps = [
-    { title: "Write or generate your script", desc: "Enter or automatically generate a script that aligns with your brand\u2019s message to personalize your AI-generated video." },
-    { title: "Choose from 300+ AI actors", desc: "Select the perfect AI actor to represent your message and build visual consistency across every campaign." },
-    { title: "Generate your video", desc: "Combine the selected avatar and script to quickly produce a high-quality, personalized video for your brand in minutes." },
+function LocalizeLanguages() {
+  const languages = [
+    { code: "FR", flag: "🇫🇷", name: "French" },
+    { code: "EN", flag: "🇬🇧", name: "English" },
+    { code: "ES", flag: "🇪🇸", name: "Spanish" },
+    { code: "DE", flag: "🇩🇪", name: "German" },
+    { code: "IT", flag: "🇮🇹", name: "Italian" },
   ];
 
-  return (
-    <section className="py-16 bg-[#F6F6F8]">
-      <div className="container-main">
-        <p className="text-[13px] text-[#999] font-medium text-center mb-2">Never been easier</p>
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-12 tracking-tight">
-          Create AI UGC videos in minutes
-        </h2>
+  const [selected, setSelected] = useState(0);
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {steps.map((s, i) => (
-            <div key={i} className="card-border overflow-hidden">
-              <div className="aspect-[4/3] bg-[#f7f7f8] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-10 h-10 bg-[#1a1a1a] rounded-full flex items-center justify-center mx-auto mb-2 text-white font-bold text-[14px]">{i + 1}</div>
-                  <p className="text-[12px] text-[#bbb]">Step {i + 1}</p>
+  return (
+    <section className="py-20 bg-[#f8f8fa]">
+      <div className="container-main">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Videos */}
+          <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#e8e8ee] to-[#d8d8e0] rounded-2xl relative overflow-hidden">
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
+                    {languages[i]?.flag} {languages[i]?.name}
+                  </span>
                 </div>
               </div>
-              <div className="p-5">
-                <h3 className="text-[16px] font-bold text-[#1a1a1a] mb-2">{s.title}</h3>
-                <p className="text-[13px] text-[#888] leading-relaxed">{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* 50+ Languages banner */}
-        <div className="mt-12 rounded-2xl bg-[#f7f7f8] p-8 md:p-10 text-center border border-gray-100">
-          <h3 className="text-[28px] md:text-[36px] font-extrabold text-[#1a1a1a] mb-2 tracking-tight">50+ Languages</h3>
-          <p className="text-[15px] text-[#888]">Instantly localize your videos with native voices and perfect lip-sync.</p>
+          {/* Text */}
+          <div className="order-1 lg:order-2">
+            <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
+              Localize in every language
+            </h2>
+            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+              Accurate translation in more than 30 languages. Reach the world.
+            </p>
+            {/* Language buttons */}
+            <div className="flex flex-wrap gap-2">
+              {languages.map((lang, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelected(i)}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full border text-[13px] font-medium transition-all ${
+                    selected === i
+                      ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
+                      : "bg-white text-[#555] border-gray-200 hover:border-[#999]"
+                  }`}
+                >
+                  <span className="text-[16px]">{lang.flag}</span>
+                  <span>{lang.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -276,71 +635,82 @@ function HowItWorks() {
 }
 
 /* ═══════════════════════════════════════════
-   FEATURES
+   BUILD YOUR OWN AI AGENT
    ═══════════════════════════════════════════ */
 
-function Features() {
+function BuildAIAgent() {
   return (
-    <section className="py-16 bg-[#f7f7f8]">
+    <section className="py-20 bg-white">
       <div className="container-main text-center">
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">
-          Integrate AI ad creation into every marketing workflow
+        <h2 className="text-[28px] md:text-[42px] font-extrabold text-[#1a1a1a] mb-3 tracking-tight">
+          Build your own AI Agent for marketing
         </h2>
-        <p className="text-[15px] text-[#888] max-w-2xl mx-auto mb-8">
-          7 AI agents for AI ads: recreate TikTok/Facebook, generate hooks/briefs/scripts, translate, and upload — no tool-switching.
+        <p className="text-[16px] text-[#888] mb-8">
+          The best AI UGC library with 1,000+ AI Actors
         </p>
-        <a href="#" className="btn-dark px-8 py-3.5">
-          Create Ad For $1
+        <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
+          <SparkleIcon className="w-4 h-4" />
+          Create Your AI Ad
         </a>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {["Recreate TikTok Ads", "Recreate Facebook Ads", "Generate Hooks", "Generate Briefs", "Generate Scripts", "Translate Videos"].map((f, i) => (
-            <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 text-left">
-              <div className="aspect-video bg-[#f7f7f8] rounded-lg mb-3 flex items-center justify-center">
-                <p className="text-[12px] text-[#ccc]">{f}</p>
-              </div>
-              <p className="text-[14px] font-semibold text-[#1a1a1a]">{f}</p>
-            </div>
-          ))}
+        {/* 1B Views stat */}
+        <div className="mb-16">
+          <div className="inline-flex items-baseline gap-2">
+            <span className="text-[64px] md:text-[96px] font-extrabold gradient-text leading-none">1B</span>
+            <span className="text-[24px] md:text-[32px] font-extrabold text-[#1a1a1a]">views</span>
+          </div>
+          <p className="text-[16px] text-[#888] mt-2">with ads created with Creafy</p>
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ═══════════════════════════════════════════
-   CASE STUDIES
-   ═══════════════════════════════════════════ */
+        {/* Influencer Cards */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex gap-5 px-4 w-max md:w-full md:justify-center">
+            {[
+              { handle: "@ameliabeautytips", name: "Health tips", badge: "ACTIVE", likes: "11M", likesChange: "+22%", followers: "12K", followersChange: "+32%" },
+              { handle: "@amymorgans", name: "Amy Morgans", badge: "ACTIVE", likes: "5M", likesChange: "+45%", followers: "18K", followersChange: "+195%" },
+              { handle: "@myiq_com", name: "My IQ · Boost Your Brain", badge: "ACTIVE", likes: "2M", likesChange: "+3%", followers: "4K", followersChange: "+19%" },
+              { handle: "@holmisthename", name: "Stock video", badge: "ACTIVE", likes: "8M", likesChange: "+45%", followers: "12.6K", followersChange: "+45%" },
+            ].map((card, i) => (
+              <div key={i} className="w-[260px] bg-[#f8f8fa] rounded-2xl overflow-hidden shrink-0 border border-gray-100">
+                {/* Profile header */}
+                <div className="p-4 pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold text-[12px]">
+                      {card.handle[1].toUpperCase()}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[13px] font-semibold text-[#1a1a1a] truncate">{card.handle}</p>
+                      <p className="text-[11px] text-[#999] truncate">{card.name}</p>
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                      {card.badge}
+                    </span>
+                  </div>
+                </div>
 
-function CaseStudies() {
-  const cases = [
-    { name: "Waynes Reeves", title: "Founder", quote: "3X\u20134X ROAS across campaigns, with +10% upsell post-purchase baked in." },
-    { name: "Eileen Lee", title: "Senior marketing Nano Foam", quote: "$19K in ad spend \u2192 $69K in total sales with a 3.73x ROAS" },
-    { name: "Jordan Welch", title: "DTC Brand Owner", quote: "Running AI ads since May 2 \u2014 strong performance on a high-fatigue product using green screen avatars over B-roll footage." },
-  ];
+                {/* Image placeholder */}
+                <div className="aspect-square bg-gradient-to-br from-[#e8e8ee] to-[#d0d0d8] flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center">
+                    <PlayIcon />
+                  </div>
+                </div>
 
-  return (
-    <section className="py-16 bg-[#F6F6F8]">
-      <div className="container-main">
-        <p className="text-[13px] text-[#999] font-medium text-center mb-2">Our cases</p>
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-12 tracking-tight">
-          Best results with Creafy
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {cases.map((c, i) => (
-            <div key={i} className="card-border p-5">
-              <div className="aspect-[9/16] bg-[#f0f0f0] rounded-xl mb-5 flex items-center justify-center relative overflow-hidden">
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#1a1a1a"><path d="M8 5v14l11-7z"/></svg>
+                {/* Stats */}
+                <div className="p-4 grid grid-cols-2 gap-3">
+                  <div>
+                    <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Likes</p>
+                    <p className="text-[16px] font-bold text-[#1a1a1a]">{card.likes}</p>
+                    <p className="text-[11px] font-semibold text-green-500">{card.likesChange}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Followers</p>
+                    <p className="text-[16px] font-bold text-[#1a1a1a]">{card.followers}</p>
+                    <p className="text-[11px] font-semibold text-green-500">{card.followersChange}</p>
+                  </div>
                 </div>
               </div>
-              <div className="w-16 h-5 bg-gray-100 rounded mb-3" />
-              <p className="text-[14px] text-[#444] mb-4 leading-relaxed italic">&ldquo;{c.quote}&rdquo;</p>
-              <p className="text-[14px] font-bold text-[#1a1a1a]">{c.name}</p>
-              <p className="text-[12px] text-[#999]">{c.title}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -348,41 +718,68 @@ function CaseStudies() {
 }
 
 /* ═══════════════════════════════════════════
-   VIDEO AGENT
+   READY TO DOMINATE CTA
    ═══════════════════════════════════════════ */
 
-function VideoAgent() {
-  const steps = [
-    { title: "Upload a reference video", desc: "Give the agent a sample ad so it can understand the structure, pacing, and style you want." },
-    { title: "Let the agent do the work", desc: "It analyzes the reference and rebuilds the flow using your product and creator images." },
-    { title: "Get a test-ready ad", desc: "You receive a fully recreated video that you can edit, customize, and launch immediately." },
-  ];
-
+function DominateCTA() {
   return (
-    <section className="py-16 bg-[#f7f7f8]">
-      <div className="container-main">
-        <p className="text-[13px] text-[#999] font-medium text-center mb-2">#1 AI Ad Agent</p>
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-3 tracking-tight">
-          Meet Video Agent
+    <section className="py-24 bg-[#1a1a1a] relative overflow-hidden">
+      {/* Background glow effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#667eea]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#818cf8]/8 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="container-main text-center relative z-10">
+        <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-extrabold text-white mb-4 tracking-tight leading-[1.1]">
+          Ready to dominate<br />your category?
         </h2>
-        <p className="text-[15px] text-[#888] text-center mb-12">
-          Create viral content with our Video Agent
+        <p className="text-[16px] text-[#888] max-w-lg mx-auto mb-10">
+          The best AI UGC library with 1,000+ AI Actors
+        </p>
+        <a href="#" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] font-bold px-10 py-4 rounded-full text-[16px] hover:bg-gray-100 transition-colors">
+          <SparkleIcon className="w-4 h-4" />
+          Create Your AI Ad
+        </a>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   FOUNDER LEVEL SUPPORT
+   ═══════════════════════════════════════════ */
+
+function FounderSupport() {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container-main text-center">
+        <h2 className="text-[28px] md:text-[42px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">
+          Founder Level Support
+        </h2>
+        <p className="text-[16px] text-[#888] max-w-xl mx-auto mb-10">
+          Our team of performance marketers and builders are here to help you win faster.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {steps.map((s, i) => (
-            <div key={i} className="bg-white rounded-xl p-5 border border-gray-100">
-              <div className="aspect-[4/3] bg-[#f7f7f8] rounded-lg mb-5 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-10 h-10 bg-[#1a1a1a] rounded-full flex items-center justify-center mx-auto mb-2 text-white font-bold text-[14px]">{i + 1}</div>
-                  <p className="text-[12px] text-[#bbb]">Step {i + 1}</p>
-                </div>
-              </div>
-              <h3 className="text-[16px] font-bold text-[#1a1a1a] mb-2">{s.title}</h3>
-              <p className="text-[13px] text-[#888] leading-relaxed">{s.desc}</p>
-            </div>
+        {/* Team photos */}
+        <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
+          {Array.from({ length: 7 }, (_, i) => (
+            <div
+              key={i}
+              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden"
+            />
           ))}
         </div>
+
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 text-[#667eea] hover:text-[#4f5fd5] font-semibold text-[15px] transition-colors"
+        >
+          Contact us
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </div>
     </section>
   );
@@ -447,7 +844,7 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-16 bg-[#F6F6F8]">
+    <section id="pricing" className="py-16 bg-[#f8f8fa]">
       <div className="container-main">
         <p className="text-[13px] text-[#999] font-medium text-center mb-2">Pricing plans</p>
         <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-10 tracking-tight">
@@ -532,7 +929,7 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-16 bg-[#f7f7f8]">
+    <section className="py-16 bg-white">
       <div className="container-main max-w-[720px]">
         <p className="text-[13px] text-[#999] font-medium text-center mb-2">FAQ</p>
         <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-10 tracking-tight">
@@ -541,7 +938,7 @@ function FAQ() {
 
         <div className="space-y-2.5">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div key={i} className="bg-[#f8f8fa] rounded-xl border border-gray-200 overflow-hidden">
               <button className="w-full flex items-center justify-between p-4 text-left gap-3" onClick={() => setOpen(open === i ? null : i)}>
                 <span className="text-[14px] font-medium text-[#1a1a1a]">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform ${open === i ? "rotate-180" : ""}`} />
@@ -560,143 +957,72 @@ function FAQ() {
 }
 
 /* ═══════════════════════════════════════════
-   FINAL CTA
-   ═══════════════════════════════════════════ */
-
-function FinalCTA() {
-  return (
-    <section className="py-20 bg-[#1a1a1a] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white rounded-full blur-[100px]" />
-      </div>
-      <div className="container-main text-center relative z-10">
-        <p className="text-[13px] text-[#888] font-medium mb-3">Start now</p>
-        <h2 className="text-[28px] md:text-[42px] font-extrabold text-white mb-3 tracking-tight">
-          Make your video in seconds
-        </h2>
-        <p className="text-[15px] text-[#888] max-w-md mx-auto mb-8">
-          Watch how fast AI makes content people can&apos;t scroll past
-        </p>
-        <a href="#" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] font-bold px-8 py-4 rounded-full text-[16px] hover:bg-gray-100 transition-colors">
-          Create Ad For $1
-        </a>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   SEO LINKS
-   ═══════════════════════════════════════════ */
-
-function SEOLinks() {
-  const links = [
-    "AI script-based video ads for healthcare brands",
-    "AI-powered brand story creator with social proof overlay",
-    "AI avatar testimonial maker for YouTube Shorts",
-    "AI-powered brand story creator for real estate listings",
-    "Interactive avatar video tool for B2B companies",
-    "Convert text to UGC video for healthcare brands",
-    "UGC automation software with testimonial carousel",
-    "AI script-based video ads for explainer videos",
-    "AI avatar testimonial maker with AI voice cloning",
-    "Automated customer testimonial AI for B2B companies",
-    "AI-powered brand story creator for course promotions",
-    "Interactive avatar video tool with timed subtitles",
-    "UGC automation software for travel agencies",
-    "AI script-based video ads with branded intro",
-    "AI avatar testimonial maker for retail brands",
-    "Automated customer testimonial AI with call-to-action scenes",
-    "AI-powered brand story creator for SaaS platforms",
-    "Interactive avatar video tool for e-commerce",
-    "UGC automation software in Portuguese",
-    "AI script-based video ads in Korean",
-  ];
-
-  return (
-    <section className="py-8 bg-[#F6F6F8] border-t border-gray-100">
-      <div className="container-main">
-        <div className="flex flex-wrap gap-x-1 gap-y-1 justify-center">
-          {links.map((l, i) => (
-            <a key={i} href="#" className="text-[11px] text-[#ccc] hover:text-[#888] transition-colors">
-              {l}{i < links.length - 1 && <span className="mx-1.5 text-[#e0e0e0]">|</span>}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
 
 function Footer() {
   return (
-    <footer className="py-14 bg-[#1a1a1a] text-white">
+    <footer className="py-14 bg-[#fafafa] border-t border-gray-100">
       <div className="container-main">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+          {/* Logo */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-                <span className="text-[#1a1a1a] font-bold text-[12px]">C</span>
+              <div className="w-7 h-7 bg-[#1a1a1a] rounded-md flex items-center justify-center">
+                <span className="text-white font-bold text-[12px]">C</span>
               </div>
-              <span className="text-[16px] font-semibold">creafy</span>
+              <span className="text-[16px] font-semibold text-[#1a1a1a]">creafy</span>
             </div>
-            <p className="text-[12px] text-[#888]">
-              Write your script → Pick an avatar → Generate video
+            <p className="text-[12px] text-[#888] leading-relaxed">
+              Create winning ads with AI. Write your script, pick an avatar, generate video.
             </p>
           </div>
 
+          {/* Features */}
           <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#666] mb-3 tracking-wider">Main</h4>
+            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Features</h4>
             <div className="space-y-1.5">
-              {["Home", "Features", "Affiliate", "Pricing", "Languages", "Ad Toolkit", "Blog", "API access"].map((l, i) => (
-                <a key={i} href="#" className="block text-[13px] text-[#888] hover:text-white transition-colors">{l}</a>
+              {["AI UGC Generator", "AI Avatars", "Text to Speech", "AI Facebook Ads", "AI TikTok Ads", "AI Lip-sync", "AI Product Video", "AI Actors", "AI Ads", "AI Video API"].map((l, i) => (
+                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
               ))}
             </div>
           </div>
 
+          {/* Industries */}
           <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#666] mb-3 tracking-wider">Legal</h4>
+            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Industries</h4>
             <div className="space-y-1.5">
-              {["Terms of Services", "Privacy Policy", "Refund Policy", "Fair Use Policy", "Custom Avatar Policy", "Trial Policy"].map((l, i) => (
-                <a key={i} href="#" className="block text-[13px] text-[#888] hover:text-white transition-colors">{l}</a>
+              {["E-Commerce", "SaaS", "Mobile Apps", "Lead Generation", "Marketing Agencies", "Insurance", "Real Estate", "Law Firm"].map((l, i) => (
+                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
               ))}
             </div>
           </div>
 
+          {/* Free Tools */}
           <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#666] mb-3 tracking-wider">Address</h4>
-            <p className="text-[13px] text-[#888] mb-4 leading-relaxed">
-              45 Fitzroy Street,<br />Fitzrovia, London<br />W1T 6EB
-            </p>
-            <h4 className="text-[11px] font-bold uppercase text-[#666] mb-1.5 tracking-wider">Need help?</h4>
-            <a href="mailto:help@creafy.ai" className="text-[13px] text-white hover:underline">help@creafy.ai</a>
+            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Free Tools</h4>
+            <div className="space-y-1.5">
+              <a href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">AI Hook Generator</a>
+            </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Resources</h4>
+            <div className="space-y-1.5">
+              {["Blog", "Contact", "AI YouTube Videos", "AI TikTok Videos", "AI Facebook Ads", "Ad Creative Testing", "Use Cases"].map((l, i) => (
+                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-[#333] pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-[#666]">&copy; 2025 Creafy. All rights Reserved.</p>
-          <div className="flex items-center gap-4">
-            {/* X */}
-            <a href="#" className="text-[#666] hover:text-white transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            {/* TikTok */}
-            <a href="#" className="text-[#666] hover:text-white transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.11V9a6.27 6.27 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.01a8.16 8.16 0 003.76.92V6.69z"/></svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="#" className="text-[#666] hover:text-white transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            {/* Instagram */}
-            <a href="#" className="text-[#666] hover:text-white transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
+        <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[12px] text-[#999]">&copy; 2026 Creafy.ai</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Guides & Support</a>
+            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Terms & Conditions</a>
+            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
@@ -713,15 +1039,20 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <TrustMetrics />
-      <HowItWorks />
-      <Features />
-      <CaseStudies />
-      <VideoAgent />
+      <BetterVideoAds />
+      <TrustedByMarketers />
+      <CampaignResults />
+      <ThoughtLeaders />
+      <AIActors />
+      <ProductInHand />
+      <AIVideoEditing />
+      <EmotionControl />
+      <LocalizeLanguages />
+      <BuildAIAgent />
       <Pricing />
       <FAQ />
-      <FinalCTA />
-      <SEOLinks />
+      <DominateCTA />
+      <FounderSupport />
       <Footer />
     </main>
   );
