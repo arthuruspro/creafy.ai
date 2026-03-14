@@ -232,8 +232,7 @@ function BetterVideoAds() {
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-6 bg-[#5C7DEE] rounded-b-2xl">
-                <h3 className="text-[18px] font-bold text-white mb-2">{card.title}</h3>
-                <p className="text-[14px] text-white/80 leading-relaxed">{card.desc}</p>
+                <h3 className="text-[18px] font-bold text-white">{card.title}</h3>
               </div>
             </div>
           ))}
@@ -387,7 +386,6 @@ export default function Home() {
       <BetterVideoAds />
       <ProductInHand />
       <AIActors />
-      <Footer />
     </main>
   );
 }
