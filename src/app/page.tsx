@@ -843,57 +843,16 @@ function Footer() {
   return (
     <footer className="py-14 bg-[#fafafa] border-t border-gray-100">
       <div className="container-main">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
-          {/* Logo */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 bg-[#1a1a1a] rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-[12px]">C</span>
-              </div>
-              <span className="text-[16px] font-semibold text-[#1a1a1a]">creafy</span>
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-7 h-7 bg-[#1a1a1a] rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-[12px]">C</span>
             </div>
-            <p className="text-[12px] text-[#888] leading-relaxed">
-              Create winning ads with AI. Write your script, pick an avatar, generate video.
-            </p>
+            <span className="text-[16px] font-semibold text-[#1a1a1a]">creafy</span>
           </div>
-
-          {/* Features */}
-          <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Features</h4>
-            <div className="space-y-1.5">
-              {["AI UGC Generator", "AI Avatars", "Text to Speech", "AI Facebook Ads", "AI TikTok Ads", "AI Lip-sync", "AI Product Video", "AI Actors", "AI Ads", "AI Video API"].map((l, i) => (
-                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Industries</h4>
-            <div className="space-y-1.5">
-              {["E-Commerce", "SaaS", "Mobile Apps", "Lead Generation", "Marketing Agencies", "Insurance", "Real Estate", "Law Firm"].map((l, i) => (
-                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Free Tools */}
-          <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Free Tools</h4>
-            <div className="space-y-1.5">
-              <a href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">AI Hook Generator</a>
-            </div>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-[11px] font-bold uppercase text-[#999] mb-3 tracking-wider">Resources</h4>
-            <div className="space-y-1.5">
-              {["Blog", "Contact", "AI YouTube Videos", "AI TikTok Videos", "AI Facebook Ads", "Ad Creative Testing", "Use Cases"].map((l, i) => (
-                <a key={i} href="#" className="block text-[12px] text-[#888] hover:text-[#1a1a1a] transition-colors">{l}</a>
-              ))}
-            </div>
-          </div>
+          <p className="text-[12px] text-[#888] leading-relaxed">
+            Create winning ads with AI. Write your script, pick an avatar, generate video.
+          </p>
         </div>
 
         <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
