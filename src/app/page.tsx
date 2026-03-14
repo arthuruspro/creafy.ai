@@ -212,17 +212,17 @@ function BetterVideoAds() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
-              title: "Write your script",
+              title: "Step 1) Write your script",
               desc: "Type what you want to say — or let AI write it for you.",
               img: "/step1.png",
             },
             {
-              title: "Choose from 300+ AI actors",
+              title: "Step 2) Choose from 300+ AI actors",
               desc: "Realistic AI models that match your brand.",
               img: "/step2.png",
             },
             {
-              title: "Launch your ad",
+              title: "Step 3) Launch your ad",
               desc: "Download your video ad ready to run on any platform.",
               img: "/step3.png",
             },
