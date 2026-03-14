@@ -212,17 +212,17 @@ function BetterVideoAds() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
-              step: "Step 1)",
+              step: "Step 1",
               title: "Write your script",
               img: "/step1a.png",
             },
             {
-              step: "Step 2)",
+              step: "Step 2",
               title: "Choose an actor",
               img: "/step2a.png",
             },
             {
-              step: "Step 3)",
+              step: "Step 3",
               title: "Launch your ad",
               img: "/step3a.png",
             },
