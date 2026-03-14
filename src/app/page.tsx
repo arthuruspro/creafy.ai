@@ -175,8 +175,9 @@ function Hero() {
         </p>
 
         {/* CTA */}
-        <a href="#" className="btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
-          Create Your First Ad →
+        <a href="#" className="inline-flex items-center gap-2 btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
+          <SparkleIcon className="w-4 h-4" />
+          Create Your First Ad
         </a>
       </div>
 
