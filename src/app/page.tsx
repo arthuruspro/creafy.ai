@@ -214,40 +214,27 @@ function BetterVideoAds() {
             {
               title: "Choose your model",
               desc: "Pick the AI model that fits your creative goal. From cinematic video to realistic product visuals.",
-              icon: (
-                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                  <rect x="3" y="14" width="7" height="7" rx="1.5" />
-                  <rect x="14" y="14" width="7" height="7" rx="1.5" />
-                </svg>
-              ),
+              img: "/ooo1.webp",
             },
             {
               title: "Shape your ad",
               desc: "Edit, translate, extend, subtitle, upscale and remix your video using AI tools.",
-              icon: (
-                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                </svg>
-              ),
+              img: "/ooo2.webp",
             },
             {
               title: "Start from proven formats",
               desc: "Use ready-made ad presets built for performance marketers.",
-              icon: (
-                <svg className="w-8 h-8 text-[#667eea]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
-              ),
+              img: "/ooo3.webp",
             },
           ].map((card, i) => (
-            <div key={i} className="bg-[#f8f8fa] rounded-2xl p-6 text-left hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                {card.icon}
+            <div key={i} className="bg-[#f8f8fa] rounded-2xl overflow-hidden text-left hover:shadow-md transition-shadow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-2">{card.title}</h3>
-              <p className="text-[14px] text-[#888] leading-relaxed">{card.desc}</p>
+              <div className="p-6">
+                <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-2">{card.title}</h3>
+                <p className="text-[14px] text-[#888] leading-relaxed">{card.desc}</p>
+              </div>
             </div>
           ))}
         </div>
