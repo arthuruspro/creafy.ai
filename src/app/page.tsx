@@ -217,7 +217,7 @@ function BetterVideoAds() {
               img: "/step1.png",
             },
             {
-              title: "Step 2) Choose from 300+ AI actors",
+              title: "Step 2) Choose an actor",
               desc: "Realistic AI models that match your brand.",
               img: "/step2.png",
             },
