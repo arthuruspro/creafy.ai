@@ -93,7 +93,7 @@ function Navbar() {
       <div className="container-main flex items-center justify-center h-[60px]">
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-7">
-          {["Features", "Affiliate", "Pricing", "Languages"].map((item) => (
+          {["Features", "Pricing", "Languages"].map((item) => (
             <a key={item} href={item === "Pricing" ? "#pricing" : "#"} className="text-[14px] text-[#555] hover:text-[#1a1a1a] transition-colors font-medium">
               {item}
             </a>
