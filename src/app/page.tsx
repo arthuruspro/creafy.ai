@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /* ═══════════════════════════════════════════
    ICONS
@@ -99,6 +99,55 @@ function Navbar() {
 }
 
 /* ═══════════════════════════════════════════
+   VIDEO CARD (with mute/unmute toggle)
+   ═══════════════════════════════════════════ */
+
+function VideoCard({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted;
+      setMuted(!muted);
+    }
+  };
+
+  return (
+    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[3/4] w-[200px] md:w-[220px] shrink-0 md:shrink">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Mute/Unmute button */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-3 right-3 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center z-10 transition-colors hover:bg-black/70"
+      >
+        {muted ? (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        ) : (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" />
+            <path d="M19.07 4.93a10 10 0 010 14.14" />
+            <path d="M15.54 8.46a5 5 0 010 7.07" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
    HERO
    ═══════════════════════════════════════════ */
 
@@ -137,27 +186,8 @@ function Hero() {
       {/* Video Carousel (horizontal scroll on mobile, 4 videos) */}
       <div className="mt-10 overflow-x-auto scrollbar-hide">
         <div className="flex gap-3 px-5 md:justify-center md:px-0 w-max md:w-full md:max-w-3xl md:mx-auto">
-          {[
-            { src: "/dp1.mp4", credit: "1.00" },
-            { src: "/dp2.mp4", credit: "1.00" },
-            { src: "/dp3.mp4", credit: "1.00" },
-            { src: "/dp4.mp4", credit: "1.00" },
-          ].map((vid, i) => (
-            <div key={i} className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[3/4] w-[200px] md:w-[220px] shrink-0 md:shrink">
-              {/* Video */}
-              <video
-                src={vid.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Credit badge */}
-              <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-full z-10">
-                {vid.credit}
-              </div>
-            </div>
+          {["/dp1.mp4", "/dp2.mp4", "/dp3.mp4", "/dp4.mp4"].map((src, i) => (
+            <VideoCard key={i} src={src} />
           ))}
         </div>
       </div>
