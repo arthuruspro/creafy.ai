@@ -334,25 +334,9 @@ function EmotionControl() {
             <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
               Emotion control
             </h2>
-            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+            <p className="text-[16px] text-[#888] leading-relaxed">
               You have full emotion control. Just write how you want it.
             </p>
-            {/* Emotion chips */}
-            <div className="flex flex-wrap gap-2">
-              {emotions.map((e, i) => (
-                <div
-                  key={i}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-[13px] font-medium transition-colors cursor-pointer ${
-                    i === 2
-                      ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-                      : "bg-white text-[#555] border-gray-200 hover:border-[#999]"
-                  }`}
-                >
-                  <span>{e.emoji}</span>
-                  <span>{e.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Emotion images */}
