@@ -203,7 +203,7 @@ function BetterVideoAds() {
       <div className="container-main text-center">
         <h2 className="text-[32px] md:text-[44px] lg:text-[52px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
           The fastest way to create{" "}
-          <span className="gradient-text">AI videos</span>
+          <span className="gradient-text">video ads</span>
         </h2>
         <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
           No tools, no timeline, no production headaches. Just 3 steps from idea to ad, in under 2 minutes.
