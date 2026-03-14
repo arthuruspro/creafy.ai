@@ -218,7 +218,7 @@ function BetterVideoAds() {
             },
             {
               title: "Pick your AI actor",
-              desc: "Choose from 100+ realistic AI models that match your brand.",
+              desc: "Choose from 1,000+ realistic AI models that match your brand.",
               img: "/ooo2.webp",
             },
             {
