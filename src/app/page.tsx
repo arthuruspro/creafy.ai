@@ -83,7 +83,7 @@ function TopBanner() {
 
 function Navbar() {
   return (
-    <nav className="bg-white sticky top-0 z-40 border-b border-gray-100">
+    <nav className="bg-white sticky top-0 z-40">
       <div className="container-main flex items-center justify-between h-[60px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
