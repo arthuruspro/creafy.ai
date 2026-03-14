@@ -157,15 +157,6 @@ function Hero() {
   return (
     <section className="pt-10 md:pt-16 pb-6 bg-[#F6F6F8]">
       <div className="container-main text-center">
-        {/* Pill badge */}
-        <div className="inline-flex items-center gap-2 bg-[#f5f5f5] rounded-full px-4 py-2 mb-6">
-          <span className="text-[13px] text-[#666] font-medium">Create AI videos for your</span>
-          <span className="inline-flex items-center gap-1 bg-white rounded-full px-2.5 py-0.5 border border-gray-200">
-            <SparkleIcon />
-            <span className="text-[13px] font-semibold text-[#1a1a1a] typing-cursor">{typed}</span>
-          </span>
-        </div>
-
         {/* Main headline */}
         <h1 className="text-[36px] md:text-[52px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
           The fastest way to create{" "}
