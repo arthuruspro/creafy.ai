@@ -385,8 +385,8 @@ export default function Home() {
     <main>
       <Hero />
       <BetterVideoAds />
-      <AIActors />
       <ProductInHand />
+      <AIActors />
       <EmotionControl />
       <Footer />
     </main>
