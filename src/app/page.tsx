@@ -363,103 +363,6 @@ function EmotionControl() {
 }
 
 /* ═══════════════════════════════════════════
-   LOCALIZE IN EVERY LANGUAGE
-   ═══════════════════════════════════════════ */
-
-function LocalizeLanguages() {
-  const languages = [
-    { code: "FR", flag: "🇫🇷", name: "French", img: "/ooo11.webp" },
-    { code: "EN", flag: "🇬🇧", name: "English", img: "/ooo12.webp" },
-    { code: "ES", flag: "🇪🇸", name: "Spanish", img: "/ooo13.webp" },
-    { code: "DE", flag: "🇩🇪", name: "German", img: "/ooo14.webp" },
-    { code: "IT", flag: "🇮🇹", name: "Italian", img: "/ooo15.webp" },
-  ];
-
-  const [selected, setSelected] = useState(0);
-
-  return (
-    <section className="py-20 bg-[#f8f8fa]">
-      <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Single image that changes based on selected language */}
-          <div className="order-2 lg:order-1 flex justify-center">
-            <div className="aspect-[3/4] w-full max-w-[280px] rounded-2xl relative overflow-hidden">
-              <img
-                key={selected}
-                src={languages[selected].img}
-                alt={`Language ${languages[selected].name}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-3 left-3">
-                <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-                  {languages[selected].flag} {languages[selected].name}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Text */}
-          <div className="order-1 lg:order-2">
-            <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
-              Localize in every language
-            </h2>
-            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
-              Accurate translation in more than 30 languages. Reach the world.
-            </p>
-            {/* Language buttons */}
-            <div className="flex flex-wrap gap-2">
-              {languages.map((lang, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSelected(i)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full border text-[13px] font-medium transition-all ${
-                    selected === i
-                      ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-                      : "bg-white text-[#555] border-gray-200 hover:border-[#999]"
-                  }`}
-                >
-                  <span className="text-[16px]">{lang.flag}</span>
-                  <span>{lang.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   READY TO DOMINATE CTA
-   ═══════════════════════════════════════════ */
-
-function DominateCTA() {
-  return (
-    <section className="py-24 bg-[#1a1a1a] relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#667eea]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#818cf8]/8 rounded-full blur-[120px]" />
-      </div>
-
-      <div className="container-main text-center relative z-10">
-        <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-extrabold text-white mb-4 tracking-tight leading-[1.1]">
-          Ready to dominate<br />your category?
-        </h2>
-        <p className="text-[16px] text-[#888] max-w-lg mx-auto mb-10">
-          The best AI UGC library with 1,000+ AI Actors
-        </p>
-        <a href="#" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] font-bold px-10 py-4 rounded-full text-[16px] hover:bg-gray-100 transition-colors">
-          <SparkleIcon className="w-4 h-4" />
-          Create Your AI Ad
-        </a>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
 
@@ -500,8 +403,6 @@ export default function Home() {
       <AIActors />
       <ProductInHand />
       <EmotionControl />
-      <LocalizeLanguages />
-      <DominateCTA />
       <Footer />
     </main>
   );
