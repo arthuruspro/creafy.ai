@@ -114,7 +114,7 @@ function VideoCard({ src }: { src: string }) {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[43vw] md:w-[220px] shrink-0">
+    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[38vw] md:w-[220px] shrink-0">
       <video
         ref={videoRef}
         src={src}
