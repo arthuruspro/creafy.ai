@@ -82,8 +82,6 @@ function TopBanner() {
    ═══════════════════════════════════════════ */
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <nav className="bg-white sticky top-0 z-40 border-b border-gray-100">
       <div className="container-main flex items-center justify-between h-[60px]">
@@ -108,24 +106,12 @@ function Navbar() {
           <a href="#" className="btn-outline">Login or Sign up</a>
         </div>
 
-        {/* Mobile: Login or Sign up + Hamburger */}
+        {/* Mobile: Login or Sign up */}
         <div className="lg:hidden flex items-center gap-2">
           <a href="#" className="btn-outline text-[13px] !py-1.5 !px-3.5">Login or Sign up</a>
-          <button className="p-2 ml-1" onClick={() => setMenuOpen(!menuOpen)}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round">
-              {menuOpen ? <><line x1="6" y1="6" x2="18" y2="18" /><line x1="6" y1="18" x2="18" y2="6" /></> : <><line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" /></>}
-            </svg>
-          </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 py-4 px-5 space-y-3">
-          {["Features", "Affiliate", "Pricing", "Languages", "Enterprise"].map((item) => (
-            <a key={item} href="#" className="block text-[15px] font-medium text-[#333] py-1">{item}</a>
-          ))}
-        </div>
-      )}
     </nav>
   );
 }
