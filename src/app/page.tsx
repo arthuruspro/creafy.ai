@@ -161,7 +161,7 @@ function Hero() {
   const typed = useTypingAnimation(["Agency", "App", "TikTok", "DTC", "SaaS"]);
 
   return (
-    <section className="pt-10 md:pt-16 pb-6 bg-[#F6F6F8]">
+    <section className="pt-4 md:pt-8 pb-6 bg-[#F6F6F8]">
       <div className="container-main text-center">
         {/* Main headline */}
         <h1 className="text-[36px] md:text-[52px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
@@ -383,9 +383,21 @@ function Footer() {
    PAGE
    ═══════════════════════════════════════════ */
 
+function TopNav() {
+  return (
+    <nav className="py-4 bg-[#F6F6F8]">
+      <div className="container-main flex items-center justify-between">
+        <span className="text-[22px] font-extrabold text-[#1a1a1a] tracking-tight">creafy</span>
+        <a href="#" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors">Log in</a>
+      </div>
+    </nav>
+  );
+}
+
 export default function Home() {
   return (
     <main>
+      <TopNav />
       <Hero />
       <BetterVideoAds />
       <ProductInHand />
