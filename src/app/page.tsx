@@ -105,14 +105,12 @@ function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="text-[14px] text-[#555] hover:text-[#1a1a1a] font-medium px-3 py-1.5">Login</a>
-          <a href="#" className="btn-outline">Get Started</a>
+          <a href="#" className="btn-outline">Login or Sign up</a>
         </div>
 
-        {/* Mobile: Login + Get Started + Hamburger */}
+        {/* Mobile: Login or Sign up + Hamburger */}
         <div className="lg:hidden flex items-center gap-2">
-          <a href="#" className="text-[13px] text-[#555] font-medium px-2">Login</a>
-          <a href="#" className="btn-outline text-[13px] !py-1.5 !px-3.5">Get Started</a>
+          <a href="#" className="btn-outline text-[13px] !py-1.5 !px-3.5">Login or Sign up</a>
           <button className="p-2 ml-1" onClick={() => setMenuOpen(!menuOpen)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round">
               {menuOpen ? <><line x1="6" y1="6" x2="18" y2="18" /><line x1="6" y1="18" x2="18" y2="6" /></> : <><line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" /></>}
