@@ -134,26 +134,29 @@ function Hero() {
         </a>
       </div>
 
-      {/* Video Grid (2 columns, UGC-style) */}
-      <div className="container-main mt-10">
-        <div className="grid grid-cols-2 gap-3 max-w-2xl mx-auto">
+      {/* Video Carousel (horizontal scroll on mobile, 4 videos) */}
+      <div className="mt-10 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-3 px-5 md:justify-center md:px-0 w-max md:w-full md:max-w-3xl md:mx-auto">
           {[
-            { label: "Translation Headphones", credit: "1.00" },
-            { label: "Japanese shower towel", credit: "1.00" },
+            { src: "/dp1.mp4", credit: "1.00" },
+            { src: "/dp2.mp4", credit: "1.00" },
+            { src: "/dp3.mp4", credit: "1.00" },
+            { src: "/dp4.mp4", credit: "1.00" },
           ].map((vid, i) => (
-            <div key={i} className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[3/4]">
+            <div key={i} className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[3/4] w-[200px] md:w-[220px] shrink-0 md:shrink">
+              {/* Video */}
+              <video
+                src={vid.src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               {/* Credit badge */}
-              <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-white text-[11px] font-medium px-2 py-0.5 rounded-full">
+              <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-full z-10">
                 {vid.credit}
               </div>
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex items-end p-4">
-                <div className="bg-black/40 backdrop-blur-sm text-white text-[12px] font-medium px-2.5 py-1 rounded-lg">
-                  {vid.label}
-                </div>
-              </div>
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
           ))}
         </div>
