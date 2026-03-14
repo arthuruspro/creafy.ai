@@ -161,7 +161,7 @@ function Hero() {
   const typed = useTypingAnimation(["Agency", "App", "TikTok", "DTC", "SaaS"]);
 
   return (
-    <section className="pt-4 md:pt-8 pb-6 bg-[#F6F6F8]">
+    <section className="pt-8 md:pt-12 pb-6 bg-[#F6F6F8]">
       <div className="container-main text-center">
         {/* Main headline */}
         <h1 className="text-[36px] md:text-[52px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
@@ -385,7 +385,7 @@ function Footer() {
 
 function TopNav() {
   return (
-    <nav className="py-4 bg-[#F6F6F8]">
+    <nav className="pt-6 pb-4 bg-[#F6F6F8]">
       <div className="container-main flex items-center justify-between">
         <span className="flex items-center gap-2 text-[22px] font-extrabold text-[#1a1a1a] tracking-tight">
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
