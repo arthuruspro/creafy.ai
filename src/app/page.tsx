@@ -112,15 +112,23 @@ function VideoCard({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
 
-  const toggleMute = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (videoRef.current) {
-      videoRef.current.muted = !muted;
-      setMuted(!muted);
+      const newMuted = !muted;
+      videoRef.current.muted = newMuted;
+      setMuted(newMuted);
     }
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[41vw] md:w-[220px] shrink-0 cursor-pointer" onClick={toggleMute}>
+    <div
+      className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[41vw] md:w-[220px] shrink-0 cursor-pointer select-none"
+      onClick={toggleMute}
+      role="button"
+      tabIndex={0}
+    >
       <video
         ref={videoRef}
         src={src}
@@ -128,22 +136,23 @@ function VideoCard({ src }: { src: string }) {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ pointerEvents: "none" }}
       />
       {/* Mute/Unmute indicator — Apple-style glass */}
       <div
-        className="absolute top-3 right-3 w-9 h-9 bg-white/20 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center z-10 transition-all shadow-lg"
+        className="absolute top-3 right-3 w-9 h-9 bg-white/20 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center z-10 transition-all shadow-lg pointer-events-none"
       >
         {muted ? (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" stroke="none" />
-            <line x1="14" y1="5" x2="22" y2="19" stroke="white" strokeWidth="2" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" />
+            <line x1="18" y1="9" x2="18" y2="15" stroke="white" strokeWidth="2" strokeLinecap="round" />
           </svg>
         ) : (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" stroke="none" />
-            <path d="M15.54 8.46a5 5 0 010 7.07" />
-            <path d="M19.07 4.93a10 10 0 010 14.14" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" />
+            <path d="M15.54 8.46a5 5 0 010 7.07" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M19.07 4.93a10 10 0 010 14.14" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
         )}
       </div>
