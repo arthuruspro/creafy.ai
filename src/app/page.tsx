@@ -387,7 +387,10 @@ function TopNav() {
   return (
     <nav className="py-4 bg-[#F6F6F8]">
       <div className="container-main flex items-center justify-between">
-        <span className="text-[22px] font-extrabold text-[#1a1a1a] tracking-tight">creafy</span>
+        <span className="flex items-center gap-2 text-[22px] font-extrabold text-[#1a1a1a] tracking-tight">
+          <span className="w-8 h-8 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[16px] font-extrabold">C</span>
+          creafy
+        </span>
         <a href="#" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors">Log in</a>
       </div>
     </nav>
