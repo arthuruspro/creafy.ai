@@ -159,8 +159,8 @@ function Hero() {
       <div className="container-main text-center">
         {/* Main headline */}
         <h1 className="text-[36px] md:text-[52px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-5 tracking-tight">
-          The fastest way to create{" "}
-          <span className="gradient-text">AI videos</span>
+          Create winning Ads{" "}
+          <span className="gradient-text">with AI</span>
         </h1>
 
         {/* Subtitle */}
