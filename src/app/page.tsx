@@ -206,7 +206,7 @@ function BetterVideoAds() {
           <span className="gradient-text">AI videos</span>
         </h2>
         <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
-          No tools, no timeline, no production headaches. Just 3 steps from idea to ad.
+          No tools, no timeline, no production headaches. Just 3 steps from idea to ad, in under 2 minutes.
         </p>
 
         {/* 3 Feature Cards */}
