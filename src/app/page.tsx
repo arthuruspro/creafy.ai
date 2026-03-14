@@ -479,13 +479,8 @@ function Footer() {
           </p>
         </div>
 
-        <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-gray-200 pt-6">
           <p className="text-[12px] text-[#999]">&copy; 2026 Creafy.ai</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Guides & Support</a>
-            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Terms & Conditions</a>
-            <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors">Privacy Policy</a>
-          </div>
         </div>
       </div>
     </footer>
