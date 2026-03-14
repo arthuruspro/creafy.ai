@@ -32,7 +32,7 @@
     font-family: var(--font-rubik);
     color: var(--color-text);
     overflow-x: hidden;
-    background: #fff;
+    background: #F6F6F8;
   }
 
   ::-webkit-scrollbar {
@@ -40,12 +40,12 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: white;
+    background: #F6F6F8;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: #252b37;
-    border: 3px solid white;
+    border: 3px solid #F6F6F8;
     border-radius: 100px;
   }
 }

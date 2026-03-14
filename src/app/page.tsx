@@ -83,7 +83,7 @@ function TopBanner() {
 
 function Navbar() {
   return (
-    <nav className="bg-white sticky top-0 z-40">
+    <nav className="bg-[#F6F6F8] sticky top-0 z-40">
       <div className="container-main flex items-center justify-between h-[60px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
@@ -124,7 +124,7 @@ function Hero() {
   const typed = useTypingAnimation(["Agency", "App", "TikTok", "DTC", "SaaS"]);
 
   return (
-    <section className="pt-10 md:pt-16 pb-6 bg-white">
+    <section className="pt-10 md:pt-16 pb-6 bg-[#F6F6F8]">
       <div className="container-main text-center">
         {/* Pill badge */}
         <div className="inline-flex items-center gap-2 bg-[#f5f5f5] rounded-full px-4 py-2 mb-6">
@@ -186,7 +186,7 @@ function Hero() {
 
 function TrustMetrics() {
   return (
-    <section className="py-14 bg-white">
+    <section className="py-14 bg-[#F6F6F8]">
       <div className="container-main">
         <p className="text-center text-[13px] text-[#999] font-medium mb-8 tracking-wide uppercase">
           Trusted by 300+ brands with $100M+ in revenue
@@ -235,7 +235,7 @@ function HowItWorks() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#F6F6F8]">
       <div className="container-main">
         <p className="text-[13px] text-[#999] font-medium text-center mb-2">Never been easier</p>
         <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-12 tracking-tight">
@@ -314,7 +314,7 @@ function CaseStudies() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#F6F6F8]">
       <div className="container-main">
         <p className="text-[13px] text-[#999] font-medium text-center mb-2">Our cases</p>
         <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-12 tracking-tight">
@@ -441,7 +441,7 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-16 bg-white">
+    <section id="pricing" className="py-16 bg-[#F6F6F8]">
       <div className="container-main">
         <p className="text-[13px] text-[#999] font-medium text-center mb-2">Pricing plans</p>
         <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-10 tracking-tight">
@@ -627,7 +627,7 @@ function SEOLinks() {
   ];
 
   return (
-    <section className="py-8 bg-white border-t border-gray-100">
+    <section className="py-8 bg-[#F6F6F8] border-t border-gray-100">
       <div className="container-main">
         <div className="flex flex-wrap gap-x-1 gap-y-1 justify-center">
           {links.map((l, i) => (
