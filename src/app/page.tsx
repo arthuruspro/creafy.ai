@@ -114,7 +114,7 @@ function VideoCard({ src }: { src: string }) {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[3/4] w-[200px] md:w-[220px] shrink-0 md:shrink">
+    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[44vw] md:w-[220px] shrink-0">
       <video
         ref={videoRef}
         src={src}
@@ -185,7 +185,7 @@ function Hero() {
 
       {/* Video Carousel (horizontal scroll on mobile, 4 videos) */}
       <div className="mt-10 overflow-x-auto scrollbar-hide">
-        <div className="flex gap-3 px-5 md:justify-center md:px-0 w-max md:w-full md:max-w-3xl md:mx-auto">
+        <div className="flex gap-3 px-4 md:justify-center md:px-0 w-max md:w-full md:max-w-3xl md:mx-auto">
           {["/dp1.mp4", "/dp2.mp4", "/dp3.mp4", "/dp4.mp4"].map((src, i) => (
             <VideoCard key={i} src={src} />
           ))}
