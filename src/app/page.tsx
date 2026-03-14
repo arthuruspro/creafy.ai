@@ -380,48 +380,6 @@ function ProductInHand() {
 }
 
 /* ═══════════════════════════════════════════
-   AI VIDEO EDITING
-   ═══════════════════════════════════════════ */
-
-function AIVideoEditing() {
-  return (
-    <section className="py-20 bg-[#f8f8fa]">
-      <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Images */}
-          <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
-            {["/ooo9.webp", "/ooo10.webp", "/ooo11.webp"].map((src, i) => (
-              <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
-                <img src={src} alt={`AI Video Editing ${i + 1}`} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-
-          {/* Text */}
-          <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-3 mb-3">
-              <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] tracking-tight leading-[1.15]">
-                AI Video Editing
-              </h2>
-              <span className="bg-[#667eea] text-white text-[11px] font-bold px-3 py-1 rounded-full">
-                Soon!
-              </span>
-            </div>
-            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
-              Add B-Rolls, music, captions and transitions in one click.
-            </p>
-            <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
-              <SparkleIcon className="w-4 h-4" />
-              Create Your AI Ad
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    EMOTION CONTROL
    ═══════════════════════════════════════════ */
 
@@ -710,7 +668,6 @@ export default function Home() {
       <CampaignResults />
       <AIActors />
       <ProductInHand />
-      <AIVideoEditing />
       <EmotionControl />
       <LocalizeLanguages />
       <BuildAIAgent />
