@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Creafy - Create AI Videos for Your Brand",
   description:
     "The fastest way to create AI videos. Write your script, pick an avatar, generate video.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
