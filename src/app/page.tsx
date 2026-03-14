@@ -289,7 +289,7 @@ function ProductInHand() {
           <div>
             <p className="text-[13px] text-[#667eea] font-semibold mb-3 uppercase tracking-wider">Avatar holding your product</p>
             <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
-              Create your own AI Actor
+              Create your own <span className="text-[#5C7DEE]">AI Actor</span>
             </h2>
             <p className="text-[16px] text-[#888] leading-relaxed mb-8">
               Generate a face and make them hold your product, show your app, and wear your clothes.
