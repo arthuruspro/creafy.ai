@@ -171,7 +171,7 @@ function Hero() {
 
         {/* Subtitle */}
         <p className="text-[15px] md:text-[17px] text-[#444] mb-8">
-          Write your script → Pick an avatar → Generate video
+          Write your script → Pick an actor → Generate video
         </p>
 
         {/* CTA */}
