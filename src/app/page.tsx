@@ -120,7 +120,7 @@ function VideoCard({ src }: { src: string }) {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[41vw] md:w-[220px] shrink-0">
+    <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[9/16] w-[41vw] md:w-[220px] shrink-0 cursor-pointer" onClick={toggleMute}>
       <video
         ref={videoRef}
         src={src}
@@ -128,12 +128,11 @@ function VideoCard({ src }: { src: string }) {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
-      {/* Mute/Unmute button — Apple-style glass */}
-      <button
-        onClick={toggleMute}
-        className="absolute top-3 right-3 w-9 h-9 bg-white/20 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center z-10 transition-all hover:bg-white/30 shadow-lg"
+      {/* Mute/Unmute indicator — Apple-style glass */}
+      <div
+        className="absolute top-3 right-3 w-9 h-9 bg-white/20 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center z-10 transition-all shadow-lg"
       >
         {muted ? (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -147,7 +146,7 @@ function VideoCard({ src }: { src: string }) {
             <path d="M19.07 4.93a10 10 0 010 14.14" />
           </svg>
         )}
-      </button>
+      </div>
     </div>
   );
 }
