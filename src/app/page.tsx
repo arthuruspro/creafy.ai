@@ -498,24 +498,6 @@ function Pricing() {
           ))}
         </div>
 
-        {/* Enterprise */}
-        <div className="rounded-2xl border border-gray-200 p-7 bg-white">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div>
-              <h3 className="text-[20px] font-bold text-[#1a1a1a] mb-1">Enterprise</h3>
-              <p className="text-[13px] text-[#999] mb-3">For brands who need more</p>
-              <div className="space-y-2">
-                {["Everything in Pro", "Dedicated Slack channel", "Creative strategist", "ElevenLabs voice integration", "1-on-1 strategy calls", "Fully edited videos", "Done-For-You (DFY) service", "API Access"].map((f, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <CheckIcon />
-                    <span className="text-[13px] text-[#555]">{f}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <a href="#" className="btn-dark whitespace-nowrap !px-7 !py-3">Book a call</a>
-          </div>
-        </div>
       </div>
     </section>
   );
