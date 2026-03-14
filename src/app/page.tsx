@@ -84,34 +84,16 @@ function TopBanner() {
 function Navbar() {
   return (
     <nav className="bg-[#F6F6F8] sticky top-0 z-40">
-      <div className="container-main flex items-center justify-between h-[60px]">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">C</span>
-          </div>
-          <span className="text-[18px] font-semibold text-[#1a1a1a] tracking-tight">creafy</span>
-        </a>
-
+      <div className="container-main flex items-center justify-center h-[60px]">
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-7">
-          {["Features", "Affiliate", "Pricing", "Languages", "Enterprise"].map((item) => (
+          {["Features", "Affiliate", "Pricing", "Languages"].map((item) => (
             <a key={item} href={item === "Pricing" ? "#pricing" : "#"} className="text-[14px] text-[#555] hover:text-[#1a1a1a] transition-colors font-medium">
               {item}
             </a>
           ))}
         </div>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="btn-outline">Login or Sign up</a>
-        </div>
-
-        {/* Mobile: Login or Sign up */}
-        <div className="lg:hidden flex items-center gap-2">
-          <a href="#" className="btn-outline text-[13px] !py-1.5 !px-3.5">Login or Sign up</a>
-        </div>
       </div>
-
     </nav>
   );
 }
