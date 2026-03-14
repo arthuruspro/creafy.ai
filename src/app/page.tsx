@@ -130,22 +130,21 @@ function VideoCard({ src }: { src: string }) {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Mute/Unmute button */}
+      {/* Mute/Unmute button — Apple-style glass */}
       <button
         onClick={toggleMute}
-        className="absolute top-3 right-3 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center z-10 transition-colors hover:bg-black/70"
+        className="absolute top-3 right-3 w-9 h-9 bg-white/20 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center z-10 transition-all hover:bg-white/30 shadow-lg"
       >
         {muted ? (
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M11 5L6 9H2v6h4l5 4V5z" />
-            <line x1="23" y1="9" x2="17" y2="15" />
-            <line x1="17" y1="9" x2="23" y2="15" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" stroke="none" />
+            <line x1="16" y1="8" x2="16" y2="16" strokeWidth="1.8" />
           </svg>
         ) : (
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M11 5L6 9H2v6h4l5 4V5z" />
-            <path d="M19.07 4.93a10 10 0 010 14.14" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" stroke="none" />
             <path d="M15.54 8.46a5 5 0 010 7.07" />
+            <path d="M19.07 4.93a10 10 0 010 14.14" />
           </svg>
         )}
       </button>
