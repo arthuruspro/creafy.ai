@@ -233,7 +233,7 @@ function BetterVideoAds() {
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-6 bg-[#5C7DEE] rounded-b-2xl">
-                <h3 className="text-[18px] font-bold text-white flex items-center gap-2">
+                <h3 className="text-[22px] font-bold text-white flex items-center gap-2">
                   <span className="bg-[#FFD233] text-[#1a1a1a] text-[13px] font-extrabold px-2.5 py-1 rounded-md">{card.step}</span>
                   {card.title}
                 </h3>
