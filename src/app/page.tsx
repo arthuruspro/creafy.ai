@@ -244,70 +244,6 @@ function BetterVideoAds() {
 }
 
 /* ═══════════════════════════════════════════
-   CAMPAIGN RESULTS CAROUSEL
-   ═══════════════════════════════════════════ */
-
-function CampaignResults() {
-  const campaigns = [
-    { brand: "Learna", handle: "@learna", badge: "Sponsored", badgeColor: "bg-blue-100 text-blue-700", copy: "Boring textbooks? Learn smarter with AI-powered flashcards", views: "12.6K", viewsChange: "+45%", revenue: "$18.2K", revenueChange: "+120%" },
-    { brand: "Glam", handle: "@glamofficial", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Get that summer glow with our new skincare collection", views: "28K", viewsChange: "+62%", revenue: "$32.1K", revenueChange: "+270%" },
-    { brand: "MellowFlow", handle: "@mellowflow", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Sleep better tonight. Natural supplements, proven results", views: "15.3K", viewsChange: "+38%", revenue: "$10.7K", revenueChange: "+85%" },
-    { brand: "Learna", handle: "@learna", badge: "Sponsored", badgeColor: "bg-blue-100 text-blue-700", copy: "Master any subject in half the time with adaptive learning", views: "19.4K", viewsChange: "+52%", revenue: "$24.8K", revenueChange: "+156%" },
-    { brand: "Glam", handle: "@glamofficial", badge: "ACTIVE", badgeColor: "bg-green-100 text-green-700", copy: "Transform your skincare routine in just 7 days", views: "22.1K", viewsChange: "+71%", revenue: "$28.5K", revenueChange: "+198%" },
-  ];
-
-  return (
-    <section className="py-16 bg-[#f8f8fa]">
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-5 px-5 w-max">
-          {campaigns.map((c, i) => (
-            <div key={i} className="w-[300px] bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 shrink-0">
-              {/* Top bar */}
-              <div className="p-4 pb-3">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-bold text-[13px]">
-                    {c.brand[0]}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-semibold text-[#1a1a1a] truncate">{c.brand}</p>
-                    <p className="text-[11px] text-[#999]">{c.handle}</p>
-                  </div>
-                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${c.badgeColor}`}>
-                    {c.badge}
-                  </span>
-                </div>
-                <p className="text-[13px] text-[#555] leading-snug mb-3">{c.copy}</p>
-              </div>
-
-              {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#f0f0f4] to-[#e8e8ee] flex items-center justify-center">
-                <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-sm">
-                  <PlayIcon />
-                </div>
-              </div>
-
-              {/* Metrics */}
-              <div className="p-4 grid grid-cols-2 gap-3">
-                <div>
-                  <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Views</p>
-                  <p className="text-[16px] font-bold text-[#1a1a1a]">{c.views}</p>
-                  <p className="text-[11px] font-semibold text-green-500">{c.viewsChange}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Revenue</p>
-                  <p className="text-[16px] font-bold text-[#1a1a1a]">{c.revenue}</p>
-                  <p className="text-[11px] font-semibold text-green-500">{c.revenueChange}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    AI ACTORS
    ═══════════════════════════════════════════ */
 
@@ -366,8 +302,8 @@ function ProductInHand() {
           </div>
 
           {/* Images */}
-          <div className="grid grid-cols-3 gap-3">
-            {["/ooo6.webp", "/ooo7.webp", "/ooo8.webp"].map((src, i) => (
+          <div className="grid grid-cols-2 gap-3">
+            {["/ooo5.webp", "/ooo6.webp"].map((src, i) => (
               <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
                 <img src={src} alt={`Product in hand ${i + 1}`} className="w-full h-full object-cover" />
               </div>
@@ -425,9 +361,9 @@ function EmotionControl() {
           {/* Emotion images */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: "/ooo12.webp", label: "Surprised" },
-              { src: "/ooo13.webp", label: "Laughing" },
-              { src: "/ooo14.webp", label: "Neutral" },
+              { src: "/ooo8.webp", label: "Surprised" },
+              { src: "/ooo9.webp", label: "Laughing" },
+              { src: "/ooo10.webp", label: "Neutral" },
             ].map((item, i) => (
               <div key={i} className="aspect-[3/4] rounded-2xl relative overflow-hidden">
                 <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
@@ -451,11 +387,11 @@ function EmotionControl() {
 
 function LocalizeLanguages() {
   const languages = [
-    { code: "FR", flag: "🇫🇷", name: "French" },
-    { code: "EN", flag: "🇬🇧", name: "English" },
-    { code: "ES", flag: "🇪🇸", name: "Spanish" },
-    { code: "DE", flag: "🇩🇪", name: "German" },
-    { code: "IT", flag: "🇮🇹", name: "Italian" },
+    { code: "FR", flag: "🇫🇷", name: "French", img: "/ooo11.webp" },
+    { code: "EN", flag: "🇬🇧", name: "English", img: "/ooo12.webp" },
+    { code: "ES", flag: "🇪🇸", name: "Spanish", img: "/ooo13.webp" },
+    { code: "DE", flag: "🇩🇪", name: "German", img: "/ooo14.webp" },
+    { code: "IT", flag: "🇮🇹", name: "Italian", img: "/ooo15.webp" },
   ];
 
   const [selected, setSelected] = useState(0);
@@ -464,18 +400,21 @@ function LocalizeLanguages() {
     <section className="py-20 bg-[#f8f8fa]">
       <div className="container-main">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Videos */}
-          <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
-            {["/ooo15.webp", "/ooo16.webp", "/ooo17.webp"].map((src, i) => (
-              <div key={i} className="aspect-[3/4] rounded-2xl relative overflow-hidden">
-                <img src={src} alt={`Language ${languages[i]?.name}`} className="w-full h-full object-cover" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-                    {languages[i]?.flag} {languages[i]?.name}
-                  </span>
-                </div>
+          {/* Single image that changes based on selected language */}
+          <div className="order-2 lg:order-1 flex justify-center">
+            <div className="aspect-[3/4] w-full max-w-[280px] rounded-2xl relative overflow-hidden">
+              <img
+                key={selected}
+                src={languages[selected].img}
+                alt={`Language ${languages[selected].name}`}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-3 left-3">
+                <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  {languages[selected].flag} {languages[selected].name}
+                </span>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Text */}
@@ -582,7 +521,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BetterVideoAds />
-      <CampaignResults />
       <AIActors />
       <ProductInHand />
       <EmotionControl />
