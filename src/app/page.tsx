@@ -263,7 +263,7 @@ function AIActors() {
         </p>
         <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
           <SparkleIcon className="w-4 h-4" />
-          Create Your AI Ad
+          Create Your First Ad
         </a>
 
         {/* Actors Showcase */}
@@ -297,7 +297,7 @@ function ProductInHand() {
             </p>
             <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
               <SparkleIcon className="w-4 h-4" />
-              Create Your AI Ad
+              Create Your First Ad
             </a>
           </div>
 
