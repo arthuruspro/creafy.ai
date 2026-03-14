@@ -511,89 +511,6 @@ function LocalizeLanguages() {
 }
 
 /* ═══════════════════════════════════════════
-   BUILD YOUR OWN AI AGENT
-   ═══════════════════════════════════════════ */
-
-function BuildAIAgent() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="container-main text-center">
-        <h2 className="text-[28px] md:text-[42px] font-extrabold text-[#1a1a1a] mb-3 tracking-tight">
-          Build your own AI Agent for marketing
-        </h2>
-        <p className="text-[16px] text-[#888] mb-8">
-          The best AI UGC library with 1,000+ AI Actors
-        </p>
-        <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
-          <SparkleIcon className="w-4 h-4" />
-          Create Your AI Ad
-        </a>
-
-        {/* 1B Views stat */}
-        <div className="mb-16">
-          <div className="inline-flex items-baseline gap-2">
-            <span className="text-[64px] md:text-[96px] font-extrabold gradient-text leading-none">1B</span>
-            <span className="text-[24px] md:text-[32px] font-extrabold text-[#1a1a1a]">views</span>
-          </div>
-          <p className="text-[16px] text-[#888] mt-2">with ads created with Creafy</p>
-        </div>
-
-        {/* Influencer Cards */}
-        <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex gap-5 px-4 w-max md:w-full md:justify-center">
-            {[
-              { handle: "@ameliabeautytips", name: "Health tips", badge: "ACTIVE", likes: "11M", likesChange: "+22%", followers: "12K", followersChange: "+32%" },
-              { handle: "@amymorgans", name: "Amy Morgans", badge: "ACTIVE", likes: "5M", likesChange: "+45%", followers: "18K", followersChange: "+195%" },
-              { handle: "@myiq_com", name: "My IQ · Boost Your Brain", badge: "ACTIVE", likes: "2M", likesChange: "+3%", followers: "4K", followersChange: "+19%" },
-              { handle: "@holmisthename", name: "Stock video", badge: "ACTIVE", likes: "8M", likesChange: "+45%", followers: "12.6K", followersChange: "+45%" },
-            ].map((card, i) => (
-              <div key={i} className="w-[260px] bg-[#f8f8fa] rounded-2xl overflow-hidden shrink-0 border border-gray-100">
-                {/* Profile header */}
-                <div className="p-4 pb-3">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold text-[12px]">
-                      {card.handle[1].toUpperCase()}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-semibold text-[#1a1a1a] truncate">{card.handle}</p>
-                      <p className="text-[11px] text-[#999] truncate">{card.name}</p>
-                    </div>
-                    <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-full">
-                      {card.badge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Image placeholder */}
-                <div className="aspect-square bg-gradient-to-br from-[#e8e8ee] to-[#d0d0d8] flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center">
-                    <PlayIcon />
-                  </div>
-                </div>
-
-                {/* Stats */}
-                <div className="p-4 grid grid-cols-2 gap-3">
-                  <div>
-                    <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Likes</p>
-                    <p className="text-[16px] font-bold text-[#1a1a1a]">{card.likes}</p>
-                    <p className="text-[11px] font-semibold text-green-500">{card.likesChange}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-[#999] uppercase font-medium mb-0.5">Followers</p>
-                    <p className="text-[16px] font-bold text-[#1a1a1a]">{card.followers}</p>
-                    <p className="text-[11px] font-semibold text-green-500">{card.followersChange}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    READY TO DOMINATE CTA
    ═══════════════════════════════════════════ */
 
@@ -670,7 +587,6 @@ export default function Home() {
       <ProductInHand />
       <EmotionControl />
       <LocalizeLanguages />
-      <BuildAIAgent />
       <DominateCTA />
       <Footer />
     </main>
