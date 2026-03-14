@@ -138,7 +138,7 @@ function VideoCard({ src }: { src: string }) {
         {muted ? (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white" fillOpacity="0.9" stroke="none" />
-            <line x1="16" y1="8" x2="16" y2="16" strokeWidth="1.8" />
+            <line x1="14" y1="5" x2="22" y2="19" stroke="white" strokeWidth="2" />
           </svg>
         ) : (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
