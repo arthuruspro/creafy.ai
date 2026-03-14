@@ -212,18 +212,18 @@ function BetterVideoAds() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
-              title: "Step 1) Write your script",
-              desc: "Type what you want to say — or let AI write it for you.",
+              step: "Step 1)",
+              title: "Write your script",
               img: "/step1a.png",
             },
             {
-              title: "Step 2) Choose an actor",
-              desc: "Realistic AI models that match your brand.",
+              step: "Step 2)",
+              title: "Choose an actor",
               img: "/step2a.png",
             },
             {
-              title: "Step 3) Launch your ad",
-              desc: "Download your video ad ready to run on any platform.",
+              step: "Step 3)",
+              title: "Launch your ad",
               img: "/step3a.png",
             },
           ].map((card, i) => (
@@ -232,7 +232,10 @@ function BetterVideoAds() {
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-6 bg-[#5C7DEE] rounded-b-2xl">
-                <h3 className="text-[18px] font-bold text-white">{card.title}</h3>
+                <h3 className="text-[18px] font-bold text-white flex items-center gap-2">
+                  <span className="bg-[#FFD233] text-[#1a1a1a] text-[13px] font-extrabold px-2.5 py-1 rounded-md">{card.step}</span>
+                  {card.title}
+                </h3>
               </div>
             </div>
           ))}
