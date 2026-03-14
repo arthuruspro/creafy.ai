@@ -244,36 +244,6 @@ function BetterVideoAds() {
 }
 
 /* ═══════════════════════════════════════════
-   TRUSTED BY MARKETERS
-   ═══════════════════════════════════════════ */
-
-function TrustedByMarketers() {
-  const brands = ["Headway", "ClickFunnels", "Quiet", "CleanFox", "BendingSpoons", "Asana"];
-
-  return (
-    <section className="py-16 bg-white">
-      <div className="container-main text-center">
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-3 tracking-tight">
-          Used by millions of the best marketers
-        </h2>
-        <p className="text-[16px] text-[#888] mb-12">
-          Fast growing D2C brands, $1B mobile app studios, top marketing agencies
-        </p>
-
-        {/* Brand logos */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-40">
-          {brands.map((brand, i) => (
-            <div key={i} className="text-[18px] md:text-[20px] font-bold text-[#1a1a1a] tracking-tight">
-              {brand}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    CAMPAIGN RESULTS CAROUSEL
    ═══════════════════════════════════════════ */
 
@@ -338,60 +308,10 @@ function CampaignResults() {
 }
 
 /* ═══════════════════════════════════════════
-   THOUGHT LEADERS
-   ═══════════════════════════════════════════ */
-
-function ThoughtLeaders() {
-  const leaders = [
-    { name: "Alex Cooper", title: "Founder @ Adcrate", avatar: "AC" },
-    { name: "Greg Isenberg", title: "CEO @ Late Checkout", avatar: "GI" },
-    { name: "Sam Piliero", title: "CEO @ The Moonlighters", avatar: "SP" },
-  ];
-
-  return (
-    <section className="py-20 bg-white">
-      <div className="container-main">
-        <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-3 tracking-tight">
-          Recommended by thought leaders
-        </h2>
-        <p className="text-[15px] text-[#888] text-center mb-12">
-          Thought leaders, YouTube influencers, Twitter influencers, TikTok influencers
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {leaders.map((l, i) => (
-            <div key={i} className="bg-[#f8f8fa] rounded-2xl overflow-hidden">
-              {/* Video thumbnail */}
-              <div className="aspect-video bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] flex items-center justify-center relative">
-                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                  <PlayIcon />
-                </div>
-              </div>
-              {/* Info */}
-              <div className="p-5 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#667eea] to-[#818cf8] flex items-center justify-center text-white font-bold text-[12px] shrink-0">
-                  {l.avatar}
-                </div>
-                <div>
-                  <p className="text-[14px] font-bold text-[#1a1a1a]">{l.name}</p>
-                  <p className="text-[12px] text-[#888]">{l.title}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    AI ACTORS
    ═══════════════════════════════════════════ */
 
 function AIActors() {
-  const actors = Array.from({ length: 12 }, (_, i) => i);
-
   return (
     <section className="py-20 bg-[#f8f8fa]">
       <div className="container-main text-center">
@@ -407,13 +327,14 @@ function AIActors() {
           Create Your AI Ad
         </a>
 
-        {/* Actors Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {actors.map((_, i) => (
-            <div key={i} className="aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-          ))}
+        {/* Actors Showcase */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          <div className="rounded-2xl overflow-hidden">
+            <img src="/ooo4.webp" alt="AI Actors showcase 1" className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-2xl overflow-hidden">
+            <img src="/ooo5.webp" alt="AI Actors showcase 2" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </section>
@@ -446,8 +367,10 @@ function ProductInHand() {
 
           {/* Images */}
           <div className="grid grid-cols-3 gap-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#f0f0f4] to-[#e0e0e8] rounded-2xl" />
+            {["/ooo6.webp", "/ooo7.webp", "/ooo8.webp"].map((src, i) => (
+              <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
+                <img src={src} alt={`Product in hand ${i + 1}`} className="w-full h-full object-cover" />
+              </div>
             ))}
           </div>
         </div>
@@ -467,8 +390,10 @@ function AIVideoEditing() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Images */}
           <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#e8e8ee] to-[#d8d8e0] rounded-2xl" />
+            {["/ooo9.webp", "/ooo10.webp", "/ooo11.webp"].map((src, i) => (
+              <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
+                <img src={src} alt={`AI Video Editing ${i + 1}`} className="w-full h-full object-cover" />
+              </div>
             ))}
           </div>
 
@@ -541,11 +466,16 @@ function EmotionControl() {
 
           {/* Emotion images */}
           <div className="grid grid-cols-3 gap-3">
-            {["Surprised", "Laughing", "Neutral"].map((emotion, i) => (
-              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#f0f0f4] to-[#e0e0e8] rounded-2xl relative overflow-hidden">
+            {[
+              { src: "/ooo12.webp", label: "Surprised" },
+              { src: "/ooo13.webp", label: "Laughing" },
+              { src: "/ooo14.webp", label: "Neutral" },
+            ].map((item, i) => (
+              <div key={i} className="aspect-[3/4] rounded-2xl relative overflow-hidden">
+                <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
                 <div className="absolute bottom-3 left-3 right-3">
                   <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-                    {emotion}
+                    {item.label}
                   </span>
                 </div>
               </div>
@@ -578,8 +508,9 @@ function LocalizeLanguages() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Videos */}
           <div className="grid grid-cols-3 gap-3 order-2 lg:order-1">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="aspect-[3/4] bg-gradient-to-br from-[#e8e8ee] to-[#d8d8e0] rounded-2xl relative overflow-hidden">
+            {["/ooo15.webp", "/ooo16.webp", "/ooo17.webp"].map((src, i) => (
+              <div key={i} className="aspect-[3/4] rounded-2xl relative overflow-hidden">
+                <img src={src} alt={`Language ${languages[i]?.name}`} className="w-full h-full object-cover" />
                 <div className="absolute bottom-3 left-3">
                   <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
                     {languages[i]?.flag} {languages[i]?.name}
@@ -727,45 +658,6 @@ function DominateCTA() {
         <a href="#" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] font-bold px-10 py-4 rounded-full text-[16px] hover:bg-gray-100 transition-colors">
           <SparkleIcon className="w-4 h-4" />
           Create Your AI Ad
-        </a>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   FOUNDER LEVEL SUPPORT
-   ═══════════════════════════════════════════ */
-
-function FounderSupport() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="container-main text-center">
-        <h2 className="text-[28px] md:text-[42px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">
-          Founder Level Support
-        </h2>
-        <p className="text-[16px] text-[#888] max-w-xl mx-auto mb-10">
-          Our team of performance marketers and builders are here to help you win faster.
-        </p>
-
-        {/* Team photos */}
-        <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
-          {Array.from({ length: 7 }, (_, i) => (
-            <div
-              key={i}
-              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden"
-            />
-          ))}
-        </div>
-
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 text-[#667eea] hover:text-[#4f5fd5] font-semibold text-[15px] transition-colors"
-        >
-          Contact us
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
         </a>
       </div>
     </section>
@@ -1027,9 +919,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BetterVideoAds />
-      <TrustedByMarketers />
       <CampaignResults />
-      <ThoughtLeaders />
       <AIActors />
       <ProductInHand />
       <AIVideoEditing />
@@ -1039,7 +929,6 @@ export default function Home() {
       <Pricing />
       <FAQ />
       <DominateCTA />
-      <FounderSupport />
       <Footer />
     </main>
   );
