@@ -370,21 +370,7 @@ function Footer() {
   return (
     <footer className="py-14 bg-[#fafafa] border-t border-gray-100">
       <div className="container-main">
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-7 h-7 bg-[#1a1a1a] rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-[12px]">C</span>
-            </div>
-            <span className="text-[16px] font-semibold text-[#1a1a1a]">creafy</span>
-          </div>
-          <p className="text-[12px] text-[#888] leading-relaxed">
-            Create winning ads with AI. Write your script, pick an avatar, generate video.
-          </p>
-        </div>
-
-        <div className="border-t border-gray-200 pt-6">
-          <p className="text-[12px] text-[#999]">&copy; 2026 Creafy.ai</p>
-        </div>
+        <p className="text-[12px] text-[#999]">&copy; 2026 Creafy.ai</p>
       </div>
     </footer>
   );
