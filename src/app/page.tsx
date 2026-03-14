@@ -212,18 +212,18 @@ function BetterVideoAds() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
-              title: "Choose your model",
-              desc: "Pick the AI model that fits your creative goal. From cinematic video to realistic product visuals.",
+              title: "Write your script",
+              desc: "Type what you want to say — or let AI write it for you.",
               img: "/ooo1.webp",
             },
             {
-              title: "Shape your ad",
-              desc: "Edit, translate, extend, subtitle, upscale and remix your video using AI tools.",
+              title: "Pick your AI actor",
+              desc: "Choose from 100+ realistic AI models that match your brand.",
               img: "/ooo2.webp",
             },
             {
-              title: "Start from proven formats",
-              desc: "Use ready-made ad presets built for performance marketers.",
+              title: "Launch your ad",
+              desc: "Download your video ad ready to run on any platform.",
               img: "/ooo3.webp",
             },
           ].map((card, i) => (
