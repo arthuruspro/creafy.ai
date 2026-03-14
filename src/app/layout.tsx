@@ -15,7 +15,7 @@ const gochiHand = Gochi_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Creafy - Create AI Videos for Your Brand",
+  title: "Creafy - Create winning ads with AI",
   description:
     "The fastest way to create AI videos. Write your script, pick an avatar, generate video.",
   icons: {
