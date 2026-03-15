@@ -238,7 +238,7 @@ export default function PricingPage() {
 
               {/* Extra videos note */}
               <p className="mt-5 text-[13px] text-[#999] text-center">
-                Need more? Additional videos at <span className="font-semibold text-[#666]">$1.90 each</span>.
+                Need more?<br />Additional videos at <span className="font-semibold text-[#666]">$1.90 each</span>.
               </p>
 
               {/* CTA */}
