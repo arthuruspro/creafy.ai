@@ -182,7 +182,7 @@ function TopNav() {
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
           creafy
         </a>
-        <a href="#" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors no-underline">Log in</a>
+        <span className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors cursor-pointer">Log in</span>
       </div>
     </nav>
   );

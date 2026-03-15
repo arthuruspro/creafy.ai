@@ -6,103 +6,11 @@ import { useState, useEffect, useRef } from "react";
    ICONS
    ═══════════════════════════════════════════ */
 
-const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="9" fill="#17b26a" />
-    <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const XMarkIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="9" fill="#e5e7eb" />
-    <path d="M6.5 6.5l5 5M11.5 6.5l-5 5" stroke="#9ca3af" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
-
-const ChevronDown = ({ className = "" }: { className?: string }) => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={className}>
-    <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
 const SparkleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z" fill="currentColor" />
   </svg>
 );
-
-const PlayIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-    <path d="M8 5v14l11-7z" />
-  </svg>
-);
-
-/* ═══════════════════════════════════════════
-   TYPING ANIMATION
-   ═══════════════════════════════════════════ */
-
-function useTypingAnimation(words: string[]) {
-  const [display, setDisplay] = useState("");
-  const [wordIdx, setWordIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = words[wordIdx];
-    const speed = deleting ? 40 : 80;
-
-    const timer = setTimeout(() => {
-      if (!deleting) {
-        setDisplay(word.slice(0, display.length + 1));
-        if (display === word) setTimeout(() => setDeleting(true), 1800);
-      } else {
-        setDisplay(word.slice(0, display.length - 1));
-        if (display === "") {
-          setDeleting(false);
-          setWordIdx((p) => (p + 1) % words.length);
-        }
-      }
-    }, speed);
-
-    return () => clearTimeout(timer);
-  }, [display, deleting, wordIdx, words]);
-
-  return display;
-}
-
-/* ═══════════════════════════════════════════
-   TOP PROMO BANNER
-   ═══════════════════════════════════════════ */
-
-function TopBanner() {
-  return (
-    <div className="bg-[#1a1a1a] text-white py-2.5 px-4 text-center text-sm flex items-center justify-center gap-3 relative z-50">
-      <span className="text-[13px]">Create your ad for $1</span>
-      <a href="/pricing" className="btn-white-pill text-[12px] !py-1.5 !px-4">Try Now</a>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   NAVBAR
-   ═══════════════════════════════════════════ */
-
-function Navbar() {
-  return (
-    <nav className="bg-[#F6F6F8] sticky top-0 z-40">
-      <div className="container-main flex items-center justify-center h-[60px]">
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-7">
-          {["Features", "Pricing", "Languages"].map((item) => (
-            <a key={item} href={item === "Pricing" ? "#pricing" : "#"} className="text-[14px] text-[#555] hover:text-[#1a1a1a] transition-colors font-medium">
-              {item}
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
-}
 
 /* ═══════════════════════════════════════════
    VIDEO CARD (with mute/unmute toggle)
@@ -181,8 +89,6 @@ function VideoCard({ src, id }: { src: string; id: string }) {
    ═══════════════════════════════════════════ */
 
 function Hero() {
-  const typed = useTypingAnimation(["Agency", "App", "TikTok", "DTC", "SaaS"]);
-
   return (
     <section className="pt-8 md:pt-12 pb-6 bg-[#F6F6F8]">
       <div className="container-main text-center">
@@ -339,64 +245,67 @@ function ProductInHand() {
 }
 
 /* ═══════════════════════════════════════════
-   EMOTION CONTROL
-   ═══════════════════════════════════════════ */
-
-function EmotionControl() {
-  const emotions = [
-    { label: "Neutral", emoji: "😐" },
-    { label: "Happy", emoji: "😊" },
-    { label: "Surprised", emoji: "😮" },
-    { label: "Laughing", emoji: "😂" },
-    { label: "Serious", emoji: "😤" },
-  ];
-
-  return (
-    <section className="py-20 bg-white">
-      <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
-          <div>
-            <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
-              Emotion control
-            </h2>
-            <p className="text-[16px] md:text-[18px] text-[#888] leading-relaxed">
-              You have full emotion control. Just write how you want it.
-            </p>
-          </div>
-
-          {/* Emotion images */}
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { src: "/ooo8.webp", label: "Surprised" },
-              { src: "/ooo9.webp", label: "Laughing" },
-              { src: "/ooo10.webp", label: "Neutral" },
-            ].map((item, i) => (
-              <div key={i} className="aspect-[3/4] rounded-2xl relative overflow-hidden">
-                <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="bg-black/60 text-white text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-                    {item.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
 
 function Footer() {
   return (
-    <footer className="py-14 bg-[#fafafa] border-t border-gray-100">
+    <footer className="py-12 bg-[#1a1a1a]">
       <div className="container-main">
-        <p className="text-[12px] text-[#999]">&copy; 2026 Creafy.ai</p>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-0">
+          {/* Brand */}
+          <div>
+            <span className="flex items-center gap-2 text-[20px] font-extrabold text-white tracking-tight mb-3">
+              <span className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-[#1a1a1a] text-[18px] font-extrabold">C</span>
+              creafy
+            </span>
+            <p className="text-[13px] text-[#888] max-w-[240px] leading-relaxed">
+              Create winning video ads with AI actors in under 2 minutes.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div className="flex gap-16">
+            <div>
+              <h4 className="text-[13px] font-semibold text-white mb-3">Product</h4>
+              <ul className="space-y-2">
+                {["Features", "Pricing", "Examples", "Languages"].map((item) => (
+                  <li key={item}>
+                    <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-[13px] font-semibold text-white mb-3">Company</h4>
+              <ul className="space-y-2">
+                {["About", "Blog", "Contact", "Careers"].map((item) => (
+                  <li key={item}>
+                    <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-[13px] font-semibold text-white mb-3">Legal</h4>
+              <ul className="space-y-2">
+                {["Privacy", "Terms", "Refund Policy"].map((item) => (
+                  <li key={item}>
+                    <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-10 pt-6 border-t border-[#333] flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <p className="text-[12px] text-[#666]">&copy; 2026 Creafy.ai. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <span className="text-[12px] text-[#666] hover:text-white transition-colors cursor-pointer">support@creafy.ai</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -414,7 +323,7 @@ function TopNav() {
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
           creafy
         </span>
-        <a href="/pricing" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors">Log in</a>
+        <span className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors cursor-pointer">Log in</span>
       </div>
     </nav>
   );
@@ -442,6 +351,7 @@ export default function Home() {
       </section>
 
       <AIActors />
+      <Footer />
     </main>
   );
 }
