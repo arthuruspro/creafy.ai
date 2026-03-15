@@ -57,6 +57,13 @@
     padding: 0 20px;
   }
 
+  @media (min-width: 768px) {
+    .container-main {
+      max-width: 900px;
+      padding: 0 40px;
+    }
+  }
+
   /* Dark filled CTA — main button style like the original */
   .btn-dark {
     display: inline-flex;

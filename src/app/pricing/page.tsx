@@ -198,19 +198,19 @@ export default function PricingPage() {
       <TopNav />
 
       {/* Hero — Simple Pricing */}
-      <section className="pt-6 md:pt-10 pb-8 bg-[#F6F6F8]">
+      <section className="pt-6 md:pt-6 pb-8 bg-[#F6F6F8]">
         <div className="container-main text-center">
           <h1 className="text-[32px] md:text-[52px] lg:text-[60px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-3 tracking-tight">
             Simple pricing
           </h1>
-          <p className="text-[16px] md:text-[22px] text-[#888] mb-8">
+          <p className="text-[16px] md:text-[20px] text-[#888] mb-8 md:mb-6">
             One plan. Everything included.
           </p>
 
           {/* Pricing Card */}
           <div className="max-w-xs mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
-            <div className="px-8 pt-7 pb-5 text-center border-b border-gray-200">
+            <div className="px-8 pt-7 pb-5 md:pt-5 md:pb-4 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-[40px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium">/mo</span>
@@ -218,7 +218,7 @@ export default function PricingPage() {
             </div>
 
             {/* Features list */}
-            <div className="px-8 py-6">
+            <div className="px-8 py-6 md:py-5">
               <ul className="space-y-3.5 text-left">
                 {[
                   "20 video ads per month",
@@ -253,14 +253,14 @@ export default function PricingPage() {
       {/* Trusted by brands */}
       <section className="py-16 bg-[#F6F6F8]">
         <div className="container-main text-center">
-          <h2 className="text-[26px] md:text-[36px] font-bold text-[#1a1a1a] mb-8">
+          <h2 className="text-[26px] md:text-[32px] font-bold text-[#1a1a1a] mb-8">
             Trusted by 300+ brands making <span className="text-[#5C7DEE]">$100M+</span> in sales
           </h2>
         </div>
         <img
           src="/empresas.png"
           alt="Trusted brands"
-          className="w-full h-auto"
+          className="w-full md:w-3/5 md:mx-auto h-auto"
         />
       </section>
 

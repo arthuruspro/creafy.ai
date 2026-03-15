@@ -228,7 +228,7 @@ function BetterVideoAds() {
           The fastest way to create{" "}
           <span className="gradient-text">video ads</span>
         </h2>
-        <p className="text-[16px] md:text-[18px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
+        <p className="text-[16px] md:text-[20px] text-[#888] max-w-3xl mx-auto mb-14 leading-relaxed">
           No tools, no timeline, no production headaches. Just 3 steps from idea to ad, in under 2 minutes.
         </p>
 
@@ -281,7 +281,7 @@ function AIActors() {
           The most realistic and captivating{" "}
           <span className="gradient-text">AI Actors</span>
         </h2>
-        <p className="text-[16px] text-[#888] mb-8">
+        <p className="text-[16px] md:text-[18px] text-[#888] mb-8">
           The best AI UGC library with 1,000+ AI Actors
         </p>
         <a href="/pricing" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
@@ -315,7 +315,7 @@ function ProductInHand() {
             <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
               Create your own <span className="text-[#5C7DEE]">AI Actor</span>
             </h2>
-            <p className="text-[16px] text-[#888] leading-relaxed mb-8">
+            <p className="text-[16px] md:text-[18px] text-[#888] leading-relaxed mb-8">
               Generate a face and make them hold your product, show your app, and wear your clothes.
             </p>
             <a href="/pricing" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
@@ -360,7 +360,7 @@ function EmotionControl() {
             <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] mb-4 tracking-tight leading-[1.15]">
               Emotion control
             </h2>
-            <p className="text-[16px] text-[#888] leading-relaxed">
+            <p className="text-[16px] md:text-[18px] text-[#888] leading-relaxed">
               You have full emotion control. Just write how you want it.
             </p>
           </div>
@@ -439,7 +439,7 @@ export default function Home() {
         <img
           src="/empresas.png"
           alt="Trusted brands"
-          className="w-full h-auto"
+          className="w-full md:w-3/5 md:mx-auto h-auto"
         />
       </section>
     </main>
