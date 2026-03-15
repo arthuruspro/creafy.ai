@@ -277,6 +277,61 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-[#1a1a1a]">
+        <div className="container-main">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-0">
+            <div>
+              <span className="flex items-center gap-2 text-[20px] font-extrabold text-white tracking-tight mb-3">
+                <span className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-[#1a1a1a] text-[18px] font-extrabold">C</span>
+                creafy
+              </span>
+              <p className="text-[13px] text-[#888] max-w-[240px] leading-relaxed">
+                Create winning video ads with AI actors in under 2 minutes.
+              </p>
+            </div>
+            <div className="flex gap-16">
+              <div>
+                <h4 className="text-[13px] font-semibold text-white mb-3">Product</h4>
+                <ul className="space-y-2">
+                  {["Features", "Pricing", "Examples", "Languages"].map((item) => (
+                    <li key={item}>
+                      <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[13px] font-semibold text-white mb-3">Company</h4>
+                <ul className="space-y-2">
+                  {["About", "Blog", "Contact", "Careers"].map((item) => (
+                    <li key={item}>
+                      <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[13px] font-semibold text-white mb-3">Legal</h4>
+                <ul className="space-y-2">
+                  {["Privacy", "Terms", "Refund Policy"].map((item) => (
+                    <li key={item}>
+                      <span className="text-[13px] text-[#888] hover:text-white transition-colors cursor-pointer">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 pt-6 border-t border-[#333] flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <p className="text-[12px] text-[#666]">&copy; 2026 Creafy.ai. All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <span className="text-[12px] text-[#666] hover:text-white transition-colors cursor-pointer">support@creafy.ai</span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
