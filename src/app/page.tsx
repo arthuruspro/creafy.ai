@@ -435,12 +435,12 @@ export default function Home() {
           <h2 className="text-[26px] md:text-[36px] font-bold text-[#1a1a1a] mb-8">
             Trusted by 300+ brands making <span className="text-[#5C7DEE]">$100M+</span> in sales
           </h2>
-          <img
-            src="/empresas.png"
-            alt="Trusted brands"
-            className="w-full h-auto"
-          />
         </div>
+        <img
+          src="/empresas.png"
+          alt="Trusted brands"
+          className="w-full h-auto"
+        />
       </section>
     </main>
   );
