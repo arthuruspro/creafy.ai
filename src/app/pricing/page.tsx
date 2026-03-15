@@ -13,9 +13,8 @@ const SparkleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 );
 
 const CheckIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <circle cx="10" cy="10" r="10" fill="#5C7DEE" />
-    <path d="M6 10l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+    <path d="M5 10.5l4 4 6.5-7" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -29,15 +28,32 @@ const ChevronDown = ({ className = "" }: { className?: string }) => (
    VIDEO CARD (with mute/unmute toggle)
    ═══════════════════════════════════════════ */
 
-function PricingVideoCard({ src }: { src: string }) {
+let activeVideoId: string | null = null;
+
+function PricingVideoCard({ src, id }: { src: string; id: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail !== id && videoRef.current) {
+        videoRef.current.muted = true;
+        setMuted(true);
+      }
+    };
+    window.addEventListener("creafy-unmute", handler);
+    return () => window.removeEventListener("creafy-unmute", handler);
+  }, [id]);
 
   const toggleMute = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (videoRef.current) {
       const newMuted = !muted;
+      if (!newMuted) {
+        window.dispatchEvent(new CustomEvent("creafy-unmute", { detail: id }));
+      }
       videoRef.current.muted = newMuted;
       setMuted(newMuted);
     }
@@ -96,7 +112,7 @@ function VideoShowcase() {
       <div className="mb-4 overflow-hidden">
         <div className="flex gap-4 animate-scroll-left-slow" style={{ width: "max-content" }}>
           {[...row1Videos, ...row1Videos].map((src, i) => (
-            <PricingVideoCard key={`r1-${i}`} src={src} />
+            <PricingVideoCard key={`r1-${i}`} src={src} id={`r1-${i}`} />
           ))}
         </div>
       </div>
@@ -104,7 +120,7 @@ function VideoShowcase() {
       <div className="overflow-hidden">
         <div className="flex gap-4 animate-scroll-right-slow" style={{ width: "max-content" }}>
           {[...row2Videos, ...row2Videos].map((src, i) => (
-            <PricingVideoCard key={`r2-${i}`} src={src} />
+            <PricingVideoCard key={`r2-${i}`} src={src} id={`r2-${i}`} />
           ))}
         </div>
       </div>
@@ -192,18 +208,18 @@ export default function PricingPage() {
           </p>
 
           {/* Pricing Card */}
-          <div className="max-w-md mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+          <div className="max-w-sm mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
-            <div className="bg-[#5C7DEE] px-8 pt-8 pb-6 text-center">
+            <div className="px-7 pt-7 pb-5 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-[56px] md:text-[64px] font-extrabold text-white leading-none">$39</span>
-                <span className="text-[20px] text-white/70 font-medium">/mo</span>
+                <span className="text-[48px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
+                <span className="text-[18px] text-[#999] font-medium">/mo</span>
               </div>
             </div>
 
             {/* Features list */}
-            <div className="px-8 py-8">
-              <ul className="space-y-4 text-left">
+            <div className="px-7 py-6">
+              <ul className="space-y-3.5 text-left">
                 {[
                   "20 video ads per month",
                   "Delivered in 2 minutes",
@@ -221,12 +237,12 @@ export default function PricingPage() {
               </ul>
 
               {/* Extra videos note */}
-              <p className="mt-6 text-[13px] text-[#999] text-center">
+              <p className="mt-5 text-[13px] text-[#999] text-center">
                 Need more? Additional videos at <span className="font-semibold text-[#666]">$1.90 each</span>.
               </p>
 
               {/* CTA */}
-              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 text-[16px] py-4">
+              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-5 text-[16px] py-4">
                 <SparkleIcon className="w-4 h-4" />
                 Create your first ad
               </a>

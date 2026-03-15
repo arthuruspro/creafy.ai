@@ -108,15 +108,30 @@ function Navbar() {
    VIDEO CARD (with mute/unmute toggle)
    ═══════════════════════════════════════════ */
 
-function VideoCard({ src }: { src: string }) {
+function VideoCard({ src, id }: { src: string; id: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail !== id && videoRef.current) {
+        videoRef.current.muted = true;
+        setMuted(true);
+      }
+    };
+    window.addEventListener("creafy-unmute", handler);
+    return () => window.removeEventListener("creafy-unmute", handler);
+  }, [id]);
 
   const toggleMute = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (videoRef.current) {
       const newMuted = !muted;
+      if (!newMuted) {
+        window.dispatchEvent(new CustomEvent("creafy-unmute", { detail: id }));
+      }
       videoRef.current.muted = newMuted;
       setMuted(newMuted);
     }
@@ -193,7 +208,7 @@ function Hero() {
       <div className="mt-10 overflow-x-auto scrollbar-hide">
         <div className="flex gap-3 px-4 md:justify-center md:px-0 w-max md:w-full md:max-w-3xl md:mx-auto">
           {["/dp1.mp4", "/dp2.mp4", "/dp3.mp4", "/dp4.mp4"].map((src, i) => (
-            <VideoCard key={i} src={src} />
+            <VideoCard key={i} src={src} id={`hero-${i}`} />
           ))}
         </div>
       </div>
