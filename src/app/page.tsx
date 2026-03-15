@@ -78,7 +78,7 @@ function TopBanner() {
   return (
     <div className="bg-[#1a1a1a] text-white py-2.5 px-4 text-center text-sm flex items-center justify-center gap-3 relative z-50">
       <span className="text-[13px]">Create your ad for $1</span>
-      <a href="#" className="btn-white-pill text-[12px] !py-1.5 !px-4">Try Now</a>
+      <a href="/pricing" className="btn-white-pill text-[12px] !py-1.5 !px-4">Try Now</a>
     </div>
   );
 }
@@ -183,7 +183,7 @@ function Hero() {
         </p>
 
         {/* CTA */}
-        <a href="#" className="inline-flex items-center gap-2 btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
+        <a href="/pricing" className="inline-flex items-center gap-2 btn-dark text-[16px] px-10 py-4 w-full max-w-[340px] md:w-auto md:max-w-none">
           <SparkleIcon className="w-4 h-4" />
           Create your first ad
         </a>
@@ -269,7 +269,7 @@ function AIActors() {
         <p className="text-[16px] text-[#888] mb-8">
           The best AI UGC library with 1,000+ AI Actors
         </p>
-        <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
+        <a href="/pricing" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5 mb-14">
           <SparkleIcon className="w-4 h-4" />
           Create your first ad
         </a>
@@ -303,7 +303,7 @@ function ProductInHand() {
             <p className="text-[16px] text-[#888] leading-relaxed mb-8">
               Generate a face and make them hold your product, show your app, and wear your clothes.
             </p>
-            <a href="#" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
+            <a href="/pricing" className="inline-flex items-center gap-2 btn-dark px-8 py-3.5">
               <SparkleIcon className="w-4 h-4" />
               Create your first ad
             </a>
@@ -399,7 +399,7 @@ function TopNav() {
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
           creafy
         </span>
-        <a href="#" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors">Log in</a>
+        <a href="/pricing" className="text-[14px] font-medium text-[#555] hover:text-[#1a1a1a] transition-colors">Log in</a>
       </div>
     </nav>
   );
