@@ -427,8 +427,6 @@ export default function Home() {
       <Hero />
       <BetterVideoAds />
       <ProductInHand />
-      <AIActors />
-
       {/* Trusted by brands */}
       <section className="py-16 bg-white">
         <div className="container-main text-center">
@@ -442,6 +440,8 @@ export default function Home() {
           className="w-full md:w-3/5 md:mx-auto h-auto"
         />
       </section>
+
+      <AIActors />
     </main>
   );
 }
