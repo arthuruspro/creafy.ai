@@ -226,7 +226,7 @@ export default function PricingPage() {
               </p>
 
               {/* CTA */}
-              <a href="#" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 text-[16px] py-4">
+              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 text-[16px] py-4">
                 <SparkleIcon className="w-4 h-4" />
                 Create your first ad
               </a>
