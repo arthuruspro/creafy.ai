@@ -198,7 +198,7 @@ export default function PricingPage() {
       <TopNav />
 
       {/* Hero — Simple Pricing */}
-      <section className="pt-6 md:pt-10 pb-14 bg-[#F6F6F8]">
+      <section className="pt-6 md:pt-10 pb-8 bg-[#F6F6F8]">
         <div className="container-main text-center">
           <h1 className="text-[32px] md:text-[52px] lg:text-[60px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-3 tracking-tight">
             Simple pricing
