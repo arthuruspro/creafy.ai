@@ -210,12 +210,11 @@ export default function PricingPage() {
           {/* Pricing Card */}
           <div className="max-w-xs mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
-            <div className="px-8 pt-7 pb-4 text-center border-b border-gray-200">
+            <div className="px-8 pt-7 pb-5 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-[40px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium">/mo</span>
               </div>
-              <p className="text-[12px] text-[#999] mt-2">Extra videos at $1.90 each</p>
             </div>
 
             {/* Features list */}
@@ -242,6 +241,7 @@ export default function PricingPage() {
                 <SparkleIcon className="w-4 h-4" />
                 Create your first ad
               </a>
+              <p className="mt-3 text-[12px] text-[#999] text-center">Extra videos at $1.90 each</p>
             </div>
           </div>
         </div>
