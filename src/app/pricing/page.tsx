@@ -212,7 +212,7 @@ export default function PricingPage() {
             {/* Price header */}
             <div className="px-8 pt-7 pb-5 md:pt-4 md:pb-3 text-center border-b border-gray-200">
               <div className="flex items-end justify-center gap-1.5">
-                <span className="text-[14px] text-[#bbb] line-through mb-2">$69</span>
+                <span className="text-[18px] text-[#aaa] line-through mb-1.5">$69</span>
                 <span className="text-[40px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium mb-1">/mo</span>
               </div>
