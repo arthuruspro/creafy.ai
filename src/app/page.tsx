@@ -158,11 +158,11 @@ function BetterVideoAds() {
             },
           ].map((card, i) => (
             <div key={i} className="bg-[#f8f8fa] rounded-2xl overflow-hidden text-left hover:shadow-md transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[3/2] md:aspect-[4/3] overflow-hidden">
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 bg-[#5C7DEE] rounded-b-2xl">
-                <h3 className="text-[22px] font-bold text-white flex items-center gap-2">
+              <div className="p-4 md:p-6 bg-[#5C7DEE] rounded-b-2xl">
+                <h3 className="text-[18px] md:text-[22px] font-bold text-white flex items-center gap-2">
                   <span className="bg-[#1a1a1a] text-white text-[13px] font-extrabold px-2.5 py-1 rounded-md">{card.step}</span>
                   {card.title}
                 </h3>
