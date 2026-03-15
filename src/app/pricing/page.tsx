@@ -176,7 +176,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 function TopNav() {
   return (
-    <nav className="pt-6 pb-4 bg-[#F6F6F8]">
+    <nav className="pt-4 pb-3 bg-[#F6F6F8]">
       <div className="container-main flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 text-[22px] font-extrabold text-[#1a1a1a] tracking-tight no-underline">
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
@@ -198,12 +198,12 @@ export default function PricingPage() {
       <TopNav />
 
       {/* Hero — Simple Pricing */}
-      <section className="pt-8 md:pt-14 pb-14 bg-[#F6F6F8]">
+      <section className="pt-6 md:pt-10 pb-14 bg-[#F6F6F8]">
         <div className="container-main text-center">
-          <h1 className="text-[36px] md:text-[52px] lg:text-[60px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-4 tracking-tight">
+          <h1 className="text-[32px] md:text-[52px] lg:text-[60px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-3 tracking-tight">
             Simple pricing
           </h1>
-          <p className="text-[18px] md:text-[22px] text-[#888] mb-12">
+          <p className="text-[16px] md:text-[22px] text-[#888] mb-8">
             One plan. Everything included.
           </p>
 
@@ -212,7 +212,7 @@ export default function PricingPage() {
             {/* Price header */}
             <div className="px-8 pt-7 pb-5 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-[48px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
+                <span className="text-[40px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium">/mo</span>
               </div>
             </div>
@@ -236,13 +236,8 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              {/* Extra videos note */}
-              <p className="mt-5 text-[13px] text-[#999] text-center">
-                Need more?<br />Additional videos at <span className="font-semibold text-[#666]">$1.90 each</span>.
-              </p>
-
               {/* CTA */}
-              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-5 text-[16px] py-4">
+              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 text-[16px] py-4">
                 <SparkleIcon className="w-4 h-4" />
                 Create your first ad
               </a>
