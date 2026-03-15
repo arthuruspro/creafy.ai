@@ -257,7 +257,7 @@ export default function PricingPage() {
       {/* Trusted by brands */}
       <section className="py-16 bg-[#F6F6F8]">
         <div className="container-main text-center">
-          <h2 className="text-[22px] md:text-[28px] font-bold text-[#1a1a1a] mb-8">
+          <h2 className="text-[26px] md:text-[36px] font-bold text-[#1a1a1a] mb-8">
             Trusted by 300+ brands making <span className="text-[#5C7DEE]">$100M+</span> in sales
           </h2>
           <div className="max-w-3xl mx-auto">
