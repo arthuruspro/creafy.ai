@@ -208,9 +208,9 @@ export default function PricingPage() {
           </p>
 
           {/* Pricing Card */}
-          <div className="max-w-sm mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+          <div className="max-w-md mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
-            <div className="px-10 pt-7 pb-5 text-center border-b border-gray-200">
+            <div className="px-14 pt-7 pb-5 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-[48px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium">/mo</span>
@@ -218,7 +218,7 @@ export default function PricingPage() {
             </div>
 
             {/* Features list */}
-            <div className="px-10 py-6">
+            <div className="px-14 py-6">
               <ul className="space-y-3.5 text-left">
                 {[
                   "20 video ads per month",
