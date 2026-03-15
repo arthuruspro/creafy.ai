@@ -176,7 +176,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 function TopNav() {
   return (
-    <nav className="pt-4 pb-3 bg-[#F6F6F8]">
+    <nav className="pt-4 pb-3 md:pt-3 md:pb-2 bg-[#F6F6F8]">
       <div className="container-main flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 text-[22px] font-extrabold text-[#1a1a1a] tracking-tight no-underline">
           <span className="w-9 h-9 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-white text-[20px] font-extrabold">C</span>
@@ -198,19 +198,19 @@ export default function PricingPage() {
       <TopNav />
 
       {/* Hero — Simple Pricing */}
-      <section className="pt-6 md:pt-6 pb-8 bg-[#F6F6F8]">
+      <section className="pt-6 md:pt-4 pb-8 bg-[#F6F6F8]">
         <div className="container-main text-center">
-          <h1 className="text-[32px] md:text-[52px] lg:text-[60px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-3 tracking-tight">
+          <h1 className="text-[32px] md:text-[44px] font-extrabold text-[#1a1a1a] leading-[1.1] mb-3 md:mb-2 tracking-tight">
             Simple pricing
           </h1>
-          <p className="text-[16px] md:text-[20px] text-[#888] mb-8 md:mb-6">
+          <p className="text-[16px] md:text-[18px] text-[#888] mb-8 md:mb-4">
             One plan. Everything included.
           </p>
 
           {/* Pricing Card */}
           <div className="max-w-xs mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
-            <div className="px-8 pt-7 pb-5 md:pt-5 md:pb-4 text-center border-b border-gray-200">
+            <div className="px-8 pt-7 pb-5 md:pt-4 md:pb-3 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-[40px] md:text-[56px] font-extrabold text-[#1a1a1a] leading-none">$39</span>
                 <span className="text-[18px] text-[#999] font-medium">/mo</span>
@@ -218,8 +218,8 @@ export default function PricingPage() {
             </div>
 
             {/* Features list */}
-            <div className="px-8 py-6 md:py-5">
-              <ul className="space-y-3.5 text-left">
+            <div className="px-8 py-6 md:py-4">
+              <ul className="space-y-3.5 md:space-y-2.5 text-left">
                 {[
                   "20 video ads per month",
                   "Delivered in 2 minutes",
@@ -237,7 +237,7 @@ export default function PricingPage() {
               </ul>
 
               {/* CTA */}
-              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 text-[16px] py-4">
+              <a href="https://buy.stripe.com/7sYaEY5oCgoG1c5eqtes000" className="inline-flex items-center gap-2 btn-dark w-full justify-center mt-6 md:mt-4 text-[16px] py-4 md:py-3">
                 <SparkleIcon className="w-4 h-4" />
                 Create your first ad
               </a>
