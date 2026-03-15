@@ -13,7 +13,7 @@ const SparkleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 );
 
 const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+  <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
     <path d="M5 10.5l4 4 6.5-7" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
