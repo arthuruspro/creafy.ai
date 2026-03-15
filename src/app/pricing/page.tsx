@@ -208,7 +208,7 @@ export default function PricingPage() {
           </p>
 
           {/* Pricing Card */}
-          <div className="max-w-sm mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+          <div className="max-w-xs mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             {/* Price header */}
             <div className="px-8 pt-7 pb-5 text-center border-b border-gray-200">
               <div className="flex items-baseline justify-center gap-1">
