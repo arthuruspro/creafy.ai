@@ -193,7 +193,7 @@ function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-[15px] md:text-[17px] text-[#444] mb-8">
+        <p className="text-[15px] md:text-[21px] text-[#444] mb-8">
           Write your script → Pick an actor → Generate video
         </p>
 
