@@ -272,7 +272,7 @@ export default function PricingPage() {
       <section className="py-16 bg-[#F6F6F8]">
         <div className="container-main">
           <h2 className="text-[28px] md:text-[38px] font-extrabold text-[#1a1a1a] text-center mb-10 tracking-tight">
-            FAQ
+            Frequently asked questions
           </h2>
           <div className="max-w-2xl mx-auto bg-white rounded-2xl px-6 md:px-8 border border-gray-100 shadow-sm">
             {faqData.map((faq, i) => (
